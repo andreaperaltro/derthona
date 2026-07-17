@@ -1,0 +1,168 @@
+const revealItems = document.querySelectorAll('.reveal');
+const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+if (reducedMotion || !('IntersectionObserver' in window)) {
+  revealItems.forEach((item) => item.classList.add('is-visible'));
+} else {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  revealItems.forEach((item) => observer.observe(item));
+}
+
+const progress = document.querySelector('.progress');
+const updateProgress = () => {
+  const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+  const value = scrollable > 0 ? (window.scrollY / scrollable) * 100 : 0;
+  progress.style.width = `${value}%`;
+};
+window.addEventListener('scroll', updateProgress, { passive: true });
+updateProgress();
+
+const menuButton = document.querySelector('.menu-toggle');
+const navigation = document.querySelector('.site-nav');
+menuButton.addEventListener('click', () => {
+  const isOpen = navigation.classList.toggle('is-open');
+  menuButton.setAttribute('aria-expanded', String(isOpen));
+});
+navigation.addEventListener('click', (event) => {
+  if (event.target.matches('a')) {
+    navigation.classList.remove('is-open');
+    menuButton.setAttribute('aria-expanded', 'false');
+  }
+});
+
+const copyStatus = document.querySelector('.copy-status');
+document.querySelectorAll('.swatch').forEach((swatch) => {
+  swatch.addEventListener('click', async () => {
+    const color = swatch.dataset.color;
+    try {
+      await navigator.clipboard.writeText(color);
+      copyStatus.textContent = `${color} copied to clipboard`;
+    } catch {
+      copyStatus.textContent = `Colour code: ${color}`;
+    }
+    window.setTimeout(() => { copyStatus.textContent = ''; }, 2200);
+  });
+});
+
+const logoScale = document.querySelector('#logo-scale');
+const scaleLogo = document.querySelector('.scale-logo');
+const scaleStep = document.querySelector('.scale-step');
+const scaleName = document.querySelector('.scale-readout strong');
+const scaleUse = document.querySelector('.scale-readout small');
+const rangeWrap = document.querySelector('.range-wrap');
+
+const logoStates = [
+  { max: 18, src: 'assets/official/horizontal.svg', name: 'Horizontal version', use: 'Large formats', width: '92%', height: '170px' },
+  { max: 39, src: 'assets/official/contraption.svg', name: 'Contraption', use: 'Medium formats', width: '62%', height: '190px' },
+  { max: 60, src: 'assets/official/stacked-big.svg', name: 'Stacked big', use: 'Compact formats', width: '48%', height: '220px' },
+  { max: 80, src: 'assets/official/stacked-small.svg', name: 'Stacked small', use: 'Small formats', width: '30%', height: '165px' },
+  { max: 100, src: 'assets/official/lion.svg', name: 'Lion symbol', use: 'Very small formats', width: '15%', height: '170px' }
+];
+
+logoStates.forEach(({ src }) => { const image = new Image(); image.src = src; });
+
+let activeLogoState = -1;
+let scaleTimer;
+const updateLogoScale = (animate = true) => {
+  if (!logoScale) return;
+  const value = Number(logoScale.value);
+  const nextIndex = logoStates.findIndex(({ max }) => value <= max);
+  const next = logoStates[nextIndex];
+  rangeWrap?.style.setProperty('--range-position', `${value}%`);
+  if (nextIndex === activeLogoState) return;
+  activeLogoState = nextIndex;
+  window.clearTimeout(scaleTimer);
+  if (animate) scaleLogo.classList.add('is-changing');
+  scaleTimer = window.setTimeout(() => {
+    scaleLogo.src = next.src;
+    scaleLogo.style.setProperty('--logo-width', next.width);
+    scaleLogo.style.setProperty('--logo-height', next.height);
+    scaleStep.textContent = `${String(nextIndex + 1).padStart(2, '0')} / 05`;
+    scaleName.textContent = next.name;
+    scaleUse.textContent = next.use;
+    scaleLogo.classList.remove('is-changing');
+  }, animate ? 150 : 0);
+};
+
+logoScale?.addEventListener('input', () => updateLogoScale(true));
+updateLogoScale(false);
+
+const logoShowcase = document.querySelector('.logo-showcase');
+const logoThemeButtons = document.querySelectorAll('[data-logo-theme]');
+let logoThemeTimer;
+
+document.querySelectorAll('.logo-showcase img[data-dark-src]').forEach((image) => {
+  const darkAsset = new Image();
+  darkAsset.src = image.dataset.darkSrc;
+});
+
+const setLogoTheme = (theme) => {
+  if (!logoShowcase || logoShowcase.dataset.theme === theme) return;
+  window.clearTimeout(logoThemeTimer);
+  logoShowcase.classList.add('is-switching');
+  logoThemeButtons.forEach((button) => button.setAttribute('aria-pressed', String(button.dataset.logoTheme === theme)));
+  logoThemeTimer = window.setTimeout(() => {
+    logoShowcase.dataset.theme = theme;
+    logoShowcase.querySelectorAll('img[data-light-src]').forEach((image) => {
+      image.src = theme === 'dark' ? image.dataset.darkSrc : image.dataset.lightSrc;
+    });
+    logoShowcase.querySelectorAll('.asset-download').forEach((link) => {
+      link.href = theme === 'dark' ? link.dataset.darkHref : link.dataset.lightHref;
+    });
+    requestAnimationFrame(() => logoShowcase.classList.remove('is-switching'));
+  }, 150);
+};
+
+logoThemeButtons.forEach((button) => button.addEventListener('click', () => setLogoTheme(button.dataset.logoTheme)));
+
+const lightbox = document.querySelector('.image-lightbox');
+const lightboxImage = lightbox?.querySelector('img');
+const lightboxCaption = lightbox?.querySelector('figcaption');
+const lightboxCanvas = lightbox?.querySelector('.lightbox-canvas');
+const lightboxClose = lightbox?.querySelector('.lightbox-close');
+let lightboxTrigger = null;
+
+const openLightbox = (sourceImage) => {
+  if (!lightbox || !lightboxImage) return;
+  lightboxTrigger = sourceImage;
+  const source = sourceImage.currentSrc || sourceImage.src;
+  const description = sourceImage.alt || 'Derthona Basket brand asset';
+  lightboxImage.src = source;
+  lightboxImage.alt = description;
+  lightboxCaption.textContent = description;
+  lightboxCanvas.classList.toggle('is-dark', /white\.svg|white\.png/i.test(source));
+  lightbox.showModal();
+  lightboxClose.focus();
+};
+
+document.querySelectorAll('main img').forEach((image) => {
+  image.dataset.lightboxReady = '';
+  image.tabIndex = 0;
+  image.setAttribute('role', 'button');
+  image.setAttribute('aria-label', `Open image: ${image.alt || 'Derthona Basket asset'}`);
+  image.addEventListener('click', () => openLightbox(image));
+  image.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      openLightbox(image);
+    }
+  });
+});
+
+lightboxClose?.addEventListener('click', () => lightbox.close());
+lightbox?.addEventListener('click', (event) => {
+  const bounds = lightbox.getBoundingClientRect();
+  const outside = event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom;
+  if (outside) lightbox.close();
+});
+lightbox?.addEventListener('close', () => {
+  lightboxImage.src = '';
+  lightboxTrigger?.focus();
+});
