@@ -1,3 +1,32 @@
+const systemTheme = window.matchMedia('(prefers-color-scheme: dark)');
+const themeButton = document.querySelector('.theme-toggle');
+const themeLabel = document.querySelector('.theme-toggle-label');
+const themeColor = document.querySelector('meta[name="theme-color"]');
+let hasManualTheme = false;
+
+const applySiteTheme = (theme) => {
+  const isDark = theme === 'dark';
+  document.documentElement.dataset.theme = theme;
+  themeButton?.setAttribute('aria-pressed', String(isDark));
+  themeButton?.setAttribute('aria-label', `Switch to ${isDark ? 'light' : 'dark'} theme`);
+  if (themeLabel) themeLabel.textContent = `${isDark ? 'Dark' : 'Light'} theme`;
+  if (themeColor) themeColor.content = isDark ? '#2D2926' : '#FFFFFF';
+  document.querySelectorAll('.theme-aware-logo').forEach((image) => {
+    image.src = isDark ? image.dataset.darkSrc : image.dataset.lightSrc;
+  });
+};
+
+applySiteTheme(systemTheme.matches ? 'dark' : 'light');
+
+themeButton?.addEventListener('click', () => {
+  hasManualTheme = true;
+  applySiteTheme(document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark');
+});
+
+systemTheme.addEventListener('change', (event) => {
+  if (!hasManualTheme) applySiteTheme(event.matches ? 'dark' : 'light');
+});
+
 const revealItems = document.querySelectorAll('.reveal');
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -26,14 +55,21 @@ updateProgress();
 
 const menuButton = document.querySelector('.menu-toggle');
 const navigation = document.querySelector('.site-nav');
-menuButton.addEventListener('click', () => {
-  const isOpen = navigation.classList.toggle('is-open');
+const setMenuOpen = (isOpen) => {
+  navigation.classList.toggle('is-open', isOpen);
   menuButton.setAttribute('aria-expanded', String(isOpen));
-});
+  menuButton.textContent = isOpen ? 'Close' : 'Menu';
+  document.body.classList.toggle('menu-open', isOpen);
+};
+
+menuButton.addEventListener('click', () => setMenuOpen(!navigation.classList.contains('is-open')));
 navigation.addEventListener('click', (event) => {
-  if (event.target.matches('a')) {
-    navigation.classList.remove('is-open');
-    menuButton.setAttribute('aria-expanded', 'false');
+  if (event.target.closest('a')) setMenuOpen(false);
+});
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape' && navigation.classList.contains('is-open')) {
+    setMenuOpen(false);
+    menuButton.focus();
   }
 });
 
@@ -59,14 +95,16 @@ const scaleUse = document.querySelector('.scale-readout small');
 const rangeWrap = document.querySelector('.range-wrap');
 
 const logoStates = [
-  { max: 18, src: 'assets/official/horizontal.svg', name: 'Horizontal version', use: 'Large formats', width: '92%', height: '170px' },
-  { max: 39, src: 'assets/official/contraption.svg', name: 'Contraption', use: 'Medium formats', width: '62%', height: '190px' },
-  { max: 60, src: 'assets/official/stacked-big.svg', name: 'Stacked big', use: 'Compact formats', width: '48%', height: '220px' },
-  { max: 80, src: 'assets/official/stacked-small.svg', name: 'Stacked small', use: 'Small formats', width: '30%', height: '165px' },
-  { max: 100, src: 'assets/official/lion.svg', name: 'Lion symbol', use: 'Very small formats', width: '15%', height: '170px' }
+  { max: 18, lightSrc: 'assets/official/horizontal.svg', darkSrc: 'assets/official/horizontal-white.svg', name: 'Horizontal version', use: 'Large formats', width: '92%', height: '170px' },
+  { max: 39, lightSrc: 'assets/official/contraption.svg', darkSrc: 'assets/official/contraption-white.svg', name: 'Contraption', use: 'Medium formats', width: '62%', height: '190px' },
+  { max: 60, lightSrc: 'assets/official/stacked-big.svg', darkSrc: 'assets/official/stacked-big-white.svg', name: 'Stacked big', use: 'Compact formats', width: '48%', height: '220px' },
+  { max: 80, lightSrc: 'assets/official/stacked-small.svg', darkSrc: 'assets/official/stacked-small-white.svg', name: 'Stacked small', use: 'Small formats', width: '30%', height: '165px' },
+  { max: 100, lightSrc: 'assets/official/lion.svg', darkSrc: 'assets/official/lion-white.svg', name: 'Lion symbol', use: 'Very small formats', width: '15%', height: '170px' }
 ];
 
-logoStates.forEach(({ src }) => { const image = new Image(); image.src = src; });
+logoStates.forEach(({ lightSrc, darkSrc }) => {
+  [lightSrc, darkSrc].forEach((src) => { const image = new Image(); image.src = src; });
+});
 
 let activeLogoState = -1;
 let scaleTimer;
@@ -81,7 +119,9 @@ const updateLogoScale = (animate = true) => {
   window.clearTimeout(scaleTimer);
   if (animate) scaleLogo.classList.add('is-changing');
   scaleTimer = window.setTimeout(() => {
-    scaleLogo.src = next.src;
+    scaleLogo.dataset.lightSrc = next.lightSrc;
+    scaleLogo.dataset.darkSrc = next.darkSrc;
+    scaleLogo.src = document.documentElement.dataset.theme === 'dark' ? next.darkSrc : next.lightSrc;
     scaleLogo.style.setProperty('--logo-width', next.width);
     scaleLogo.style.setProperty('--logo-height', next.height);
     scaleStep.textContent = `${String(nextIndex + 1).padStart(2, '0')} / 05`;

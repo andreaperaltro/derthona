@@ -4,16 +4,17 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#EF3340">
-  <title>Derthona Basket — Brand Manual</title>
+  <script>document.documentElement.dataset.theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';</script>
+  <title>Derthona Basket Brand Manual</title>
   <meta name="description" content="The visual and verbal identity system of Derthona Basket.">
-  <link rel="icon" href="assets/official/crest.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/official/lion.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header class="topbar">
     <a class="brand-link" href="#intro" aria-label="Torna all'inizio">
-      <img class="brand-symbol" src="assets/official/lion-white.svg" alt="">
-      <span>DERTHONA BASKET</span>
+      <img class="brand-symbol theme-aware-logo" src="assets/official/lion.svg" data-light-src="assets/official/lion.svg" data-dark-src="assets/official/lion-white.svg" alt="">
+      <span>DERTHONA BASKET BRAND MANUAL</span>
     </a>
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
     <nav id="site-nav" class="site-nav" aria-label="Brand manual index">
@@ -23,6 +24,10 @@
       <a href="#logo">Logo</a>
       <a href="#colore">Colour</a>
       <a href="#tipografia">Typography</a>
+      <button class="theme-toggle" type="button" aria-pressed="false" aria-label="Switch to dark theme">
+        <span class="theme-toggle-dot" aria-hidden="true"></span>
+        <span class="theme-toggle-label">Light theme</span>
+      </button>
     </nav>
   </header>
 
@@ -31,13 +36,13 @@
       <div class="hero-index" aria-hidden="true">01 — 06</div>
       <div class="hero-copy reveal">
         <p class="eyebrow">Brand manual · version 1.0</p>
-        <h1>Rooted in<br>history.<br><em>Built for tomorrow.</em></h1>
+        <h1><span>Rooted in history.</span><span>Built for tomorrow.</span></h1>
         <p class="hero-lead">A contemporary basketball institution where history, culture and sporting ambition converge.</p>
+        <a class="scroll-cue" href="#fondamenta">Explore the system <span>↓</span></a>
       </div>
-      <div class="hero-mark reveal" aria-label="Derthona Basket stacked signature">
-        <img src="assets/official/stacked-big-white.svg" alt="Derthona Basket stacked signature">
+      <div class="hero-mark" aria-hidden="true">
+        <img class="theme-aware-logo" src="assets/official/lion.svg" data-light-src="assets/official/lion.svg" data-dark-src="assets/official/lion-white.svg" alt="">
       </div>
-      <a class="scroll-cue" href="#fondamenta">Explore the system <span>↓</span></a>
     </section>
 
     <section id="fondamenta" class="section section-light">
@@ -117,7 +122,7 @@
         <h2>Three elements.<br>One distinctive system.</h2>
       </div>
       <div class="identity-grid">
-        <article class="reveal"><img src="assets/official/lion.svg" alt="Derthona lion"><p class="micro-label">The lion</p><p>The historic symbol of the city, representing courage, generosity and grace.</p></article>
+        <article class="reveal"><img class="theme-aware-logo" src="assets/official/lion.svg" data-light-src="assets/official/lion.svg" data-dark-src="assets/official/lion-white.svg" alt="Derthona lion"><p class="micro-label">The lion</p><p>The historic symbol of the city, representing courage, generosity and grace.</p></article>
         <article class="reveal"><img src="assets/official/rose.svg" alt="Derthona rose"><p class="micro-label">The rose</p><p>A civic symbol preserved as a distinctive element of the club identity.</p></article>
         <article class="reveal identity-type"><strong>DERTHONA</strong><p class="micro-label">The typeface</p><p>Historical lettering reinterpreted for contemporary basketball communication.</p></article>
       </div>
@@ -141,7 +146,7 @@
         <div class="scale-stage">
           <div class="scale-grid" aria-hidden="true"></div>
           <div class="scale-logo-wrap">
-            <img class="scale-logo" src="assets/official/contraption.svg" alt="Recommended Derthona signature at the selected size">
+            <img class="scale-logo theme-aware-logo" src="assets/official/contraption.svg" data-light-src="assets/official/contraption.svg" data-dark-src="assets/official/contraption-white.svg" alt="Recommended Derthona signature at the selected size">
           </div>
           <div class="scale-readout" aria-live="polite">
             <span class="scale-step">02 / 05</span>
@@ -168,42 +173,42 @@
         <article class="logo-card reveal">
           <span class="logo-label">01 · Lion symbol</span>
           <img src="assets/official/lion.svg" data-light-src="assets/official/lion.svg" data-dark-src="assets/official/lion-white.svg" alt="Derthona lion symbol">
-          <a class="asset-download" href="assets/official/lion.svg" data-light-href="assets/official/lion.svg" data-dark-href="assets/official/lion-white.svg" download>Download SVG ↓</a>
+          <div class="asset-downloads"><a class="asset-download" href="assets/official/lion.svg" data-light-href="assets/official/lion.svg" data-dark-href="assets/official/lion-white.svg" download>SVG ↓</a><a class="asset-download" href="assets/downloads/LION SYMBOL.png" data-light-href="assets/downloads/LION SYMBOL.png" data-dark-href="assets/downloads/LION SYMBOL W.png" download>PNG ↓</a><a class="asset-download" href="assets/downloads/LION SYMBOL.jpg" data-light-href="assets/downloads/LION SYMBOL.jpg" data-dark-href="assets/downloads/LION SYMBOL W.jpg" download>JPG ↓</a></div>
         </article>
         <article class="logo-card reveal">
           <span class="logo-label">02 · Crest</span>
           <img src="assets/official/crest.svg" data-light-src="assets/official/crest.svg" data-dark-src="assets/official/crest-white.svg" alt="Derthona Basket crest">
-          <a class="asset-download" href="assets/official/crest.svg" data-light-href="assets/official/crest.svg" data-dark-href="assets/official/crest-white.svg" download>Download SVG ↓</a>
+          <div class="asset-downloads"><a class="asset-download" href="assets/official/crest.svg" data-light-href="assets/official/crest.svg" data-dark-href="assets/official/crest-white.svg" download>SVG ↓</a><a class="asset-download" href="assets/downloads/CREST.png" data-light-href="assets/downloads/CREST.png" data-dark-href="assets/downloads/CREST W.png" download>PNG ↓</a><a class="asset-download" href="assets/downloads/CREST.jpg" data-light-href="assets/downloads/CREST.jpg" data-dark-href="assets/downloads/CREST W.jpg" download>JPG ↓</a></div>
         </article>
         <article class="logo-card reveal">
           <span class="logo-label">03 · Contraption</span>
           <img src="assets/official/contraption.svg" data-light-src="assets/official/contraption.svg" data-dark-src="assets/official/contraption-white.svg" alt="DT Lion BK contraption">
-          <a class="asset-download" href="assets/official/contraption.svg" data-light-href="assets/official/contraption.svg" data-dark-href="assets/official/contraption-white.svg" download>Download SVG ↓</a>
+          <div class="asset-downloads"><a class="asset-download" href="assets/official/contraption.svg" data-light-href="assets/official/contraption.svg" data-dark-href="assets/official/contraption-white.svg" download>SVG ↓</a><a class="asset-download" href="assets/downloads/CONTRAPTION.png" data-light-href="assets/downloads/CONTRAPTION.png" data-dark-href="assets/downloads/CONTRAPTION W.png" download>PNG ↓</a><a class="asset-download" href="assets/downloads/CONTRAPTION.jpg" data-light-href="assets/downloads/CONTRAPTION.jpg" data-dark-href="assets/downloads/CONTRAPTION W.jpg" download>JPG ↓</a></div>
         </article>
         <article class="logo-card logo-card-wide reveal">
           <span class="logo-label">04 · Horizontal version</span>
           <img src="assets/official/horizontal.svg" data-light-src="assets/official/horizontal.svg" data-dark-src="assets/official/horizontal-white.svg" alt="Derthona Basket horizontal signature">
-          <a class="asset-download" href="assets/official/horizontal.svg" data-light-href="assets/official/horizontal.svg" data-dark-href="assets/official/horizontal-white.svg" download>Download SVG ↓</a>
+          <div class="asset-downloads"><a class="asset-download" href="assets/official/horizontal.svg" data-light-href="assets/official/horizontal.svg" data-dark-href="assets/official/horizontal-white.svg" download>SVG ↓</a><a class="asset-download" href="assets/downloads/HORIZONTAL VERSION.png" data-light-href="assets/downloads/HORIZONTAL VERSION.png" data-dark-href="assets/downloads/HORIZONTAL W.png" download>PNG ↓</a><a class="asset-download" href="assets/downloads/HORIZONTAL VERSION.jpg" data-light-href="assets/downloads/HORIZONTAL VERSION.jpg" data-dark-href="assets/downloads/HORIZONTAL W.jpg" download>JPG ↓</a></div>
         </article>
         <article class="logo-card reveal">
           <span class="logo-label">05 · Stacked big</span>
           <img src="assets/official/stacked-big.svg" data-light-src="assets/official/stacked-big.svg" data-dark-src="assets/official/stacked-big-white.svg" alt="Derthona Basket stacked big signature">
-          <a class="asset-download" href="assets/official/stacked-big.svg" data-light-href="assets/official/stacked-big.svg" data-dark-href="assets/official/stacked-big-white.svg" download>Download SVG ↓</a>
+          <div class="asset-downloads"><a class="asset-download" href="assets/official/stacked-big.svg" data-light-href="assets/official/stacked-big.svg" data-dark-href="assets/official/stacked-big-white.svg" download>SVG ↓</a><a class="asset-download" href="assets/downloads/STACKED BIG.png" data-light-href="assets/downloads/STACKED BIG.png" data-dark-href="assets/downloads/STACKED W.png" download>PNG ↓</a><a class="asset-download" href="assets/downloads/STACKED BIG.jpg" data-light-href="assets/downloads/STACKED BIG.jpg" data-dark-href="assets/downloads/STACKED W.jpg" download>JPG ↓</a></div>
         </article>
         <article class="logo-card reveal">
           <span class="logo-label">06 · Stacked small</span>
           <img src="assets/official/stacked-small.svg" data-light-src="assets/official/stacked-small.svg" data-dark-src="assets/official/stacked-small-white.svg" alt="Derthona Basket stacked small signature">
-          <a class="asset-download" href="assets/official/stacked-small.svg" data-light-href="assets/official/stacked-small.svg" data-dark-href="assets/official/stacked-small-white.svg" download>Download SVG ↓</a>
+          <div class="asset-downloads"><a class="asset-download" href="assets/official/stacked-small.svg" data-light-href="assets/official/stacked-small.svg" data-dark-href="assets/official/stacked-small-white.svg" download>SVG ↓</a><a class="asset-download" href="assets/downloads/STACKED SMALL.png" data-light-href="assets/downloads/STACKED SMALL.png" data-dark-href="assets/downloads/STACKED SMALL W.png" download>PNG ↓</a><a class="asset-download" href="assets/downloads/STACKED SMALL.jpg" data-light-href="assets/downloads/STACKED SMALL.jpg" data-dark-href="assets/downloads/STACKED SMALL W.jpg" download>JPG ↓</a></div>
         </article>
         <article class="logo-card reveal">
           <span class="logo-label">07 · Monogram</span>
           <img src="assets/official/monogram.svg" data-light-src="assets/official/monogram.svg" data-dark-src="assets/official/monogram-white.svg" alt="Derthona Basket monogram">
-          <a class="asset-download" href="assets/official/monogram.svg" data-light-href="assets/official/monogram.svg" data-dark-href="assets/official/monogram-white.svg" download>Download SVG ↓</a>
+          <div class="asset-downloads"><a class="asset-download" href="assets/official/monogram.svg" data-light-href="assets/official/monogram.svg" data-dark-href="assets/official/monogram-white.svg" download>SVG ↓</a><a class="asset-download" href="assets/downloads/MONOGRAM.png" data-light-href="assets/downloads/MONOGRAM.png" data-dark-href="assets/downloads/MONOGRAM W.png" download>PNG ↓</a><a class="asset-download" href="assets/downloads/MONOGRAM.jpg" data-light-href="assets/downloads/MONOGRAM.jpg" data-dark-href="assets/downloads/MONOGRAM W.jpg" download>JPG ↓</a></div>
         </article>
         <article class="logo-card reveal">
           <span class="logo-label">08 · Rose symbol</span>
           <img src="assets/official/rose.svg" data-light-src="assets/official/rose.svg" data-dark-src="assets/official/rose.svg" alt="Derthona rose symbol">
-          <a class="asset-download" href="assets/official/rose.svg" data-light-href="assets/official/rose.svg" data-dark-href="assets/official/rose.svg" download>Download SVG ↓</a>
+          <div class="asset-downloads"><a class="asset-download" href="assets/official/rose.svg" data-light-href="assets/official/rose.svg" data-dark-href="assets/official/rose.svg" download>SVG ↓</a><a class="asset-download" href="assets/downloads/RESE SYMBOL.png" data-light-href="assets/downloads/RESE SYMBOL.png" data-dark-href="assets/downloads/RESE SYMBOL.png" download>PNG ↓</a><a class="asset-download" href="assets/downloads/RESE SYMBOL.jpg" data-light-href="assets/downloads/RESE SYMBOL.jpg" data-dark-href="assets/downloads/RESE SYMBOL.jpg" download>JPG ↓</a></div>
         </article>
       </div>
       <div class="clearspace reveal">
