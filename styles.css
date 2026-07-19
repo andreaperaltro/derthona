@@ -206,6 +206,20 @@ a { color: inherit; }
 .font-downloads a span { font: 500 11px/1.25 var(--sans); letter-spacing: .08em; text-transform: uppercase; }
 .font-downloads a:hover { color: var(--red); background: var(--theme-surface); }
 .font-downloads a:focus-visible { color: var(--red); outline: 2px solid var(--red); outline-offset: -3px; }
+.type-tester { --tester-size: 112px; --tester-tracking: -.035em; padding: clamp(28px, 4vw, 56px) 0 26px; border-top: 1px solid var(--line); }
+.type-tester-head { margin-bottom: 22px; }
+.type-tester-head .micro-label { margin: 0; }
+.type-tester-controls { padding: 20px 0; display: flex; align-items: center; gap: 32px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.type-alternates-control { display: inline-flex; align-items: center; gap: 10px; color: var(--theme-muted); cursor: pointer; white-space: nowrap; font: 500 11px/1 var(--sans); letter-spacing: .1em; text-transform: uppercase; }
+.type-alternates-control input { width: 16px; height: 16px; margin: 0; accent-color: var(--red); cursor: pointer; }
+.type-size-control, .type-tracking-control { min-width: 0; flex: 1; display: flex; align-items: center; gap: 16px; color: var(--theme-muted); font: 500 11px/1 var(--sans); letter-spacing: .1em; text-transform: uppercase; }
+.type-size-control span, .type-tracking-control span { display: flex; align-items: center; gap: 12px; white-space: nowrap; }
+.type-size-control output, .type-tracking-control output { color: var(--theme-text); }
+.type-size-control input, .type-tracking-control input { flex: 1; min-width: 90px; accent-color: var(--red); cursor: ew-resize; }
+.type-tester-input { min-height: calc(var(--tester-size) * .95); margin-top: clamp(42px, 6vw, 76px); padding: .03em 0 .16em; color: var(--red); font: 700 var(--tester-size)/.84 var(--display); letter-spacing: var(--tester-tracking); text-transform: uppercase; white-space: pre-wrap; overflow-wrap: anywhere; outline: 0; caret-color: var(--red); transition: color .25s ease; }
+.type-tester-input:focus { color: var(--theme-text); }
+.type-tester-input.has-alternates { font-feature-settings: "ss01" 1; }
+.type-tester-hint { margin: 22px 0 0; color: var(--theme-muted); font-size: 11px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; }
 .glyph-accordion { border-top: 1px solid var(--line); }
 .glyph-accordion summary { min-height: 92px; padding: 24px 0; display: flex; align-items: center; justify-content: space-between; gap: 32px; cursor: pointer; list-style: none; font: 700 clamp(28px, 3vw, 48px)/.9 var(--display); text-transform: uppercase; }
 .glyph-accordion summary::-webkit-details-marker { display: none; }
@@ -357,6 +371,9 @@ main img[data-lightbox-ready] { cursor: zoom-in; }
   .pillars-grid { grid-template-columns: 1fr; }
   .display-font-intro h3 { font-size: clamp(52px, 16vw, 76px); }
   .font-downloads { grid-template-columns: 1fr; }
+  .type-tester { --tester-size: 72px; }
+  .type-tester-controls { align-items: stretch; flex-direction: column; gap: 20px; }
+  .type-size-control, .type-tracking-control { width: 100%; min-width: 0; }
   .glyph-accordion summary { min-height: 118px; align-items: flex-start; flex-direction: column; gap: 14px; }
   .glyph-grid { grid-template-columns: repeat(auto-fill, minmax(68px, 1fr)); }
   .glyph-card { min-height: 92px; }

@@ -270,6 +270,27 @@
             <a href="assets/fonts/DerthonaDisplay-Regular.woff2" download>WOFF2 <span>Webfont</span> ↓</a>
           </div>
         </div>
+        <div class="type-tester" aria-labelledby="type-tester-title">
+          <div class="type-tester-head">
+            <p id="type-tester-title" class="micro-label">Try Derthona Display</p>
+          </div>
+          <div class="type-tester-controls">
+            <label class="type-alternates-control" for="type-alternates">
+              <input id="type-alternates" type="checkbox">
+              <span>Alternate style</span>
+            </label>
+            <label class="type-size-control" for="type-size">
+              <span>Size <output id="type-size-value" for="type-size">112 px</output></span>
+              <input id="type-size" type="range" min="40" max="220" value="112" step="1" aria-label="Text size">
+            </label>
+            <label class="type-tracking-control" for="type-tracking">
+              <span>Letter spacing <output id="type-tracking-value" for="type-tracking">−0.04 em</output></span>
+              <input id="type-tracking" type="range" min="-0.10" max="0.15" value="-0.035" step="0.005" aria-label="Letter spacing">
+            </label>
+          </div>
+          <div id="type-tester-input" class="type-tester-input" contenteditable="true" role="textbox" aria-multiline="true" aria-label="Write your own text in Derthona Display" spellcheck="false">ROOTED IN HISTORY.</div>
+          <p class="type-tester-hint">Click to write your own text</p>
+        </div>
         <details class="glyph-accordion">
           <summary>
             <span>Character set <small>201 Unicode · 11 SS01</small></span>

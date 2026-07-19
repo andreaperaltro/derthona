@@ -163,6 +163,38 @@ const setLogoTheme = (theme) => {
 logoThemeButtons.forEach((button) => button.addEventListener('click', () => setLogoTheme(button.dataset.logoTheme)));
 
 const glyphRoot = document.querySelector('#derthona-glyphs');
+const typeTester = document.querySelector('#type-tester-input');
+const typeSize = document.querySelector('#type-size');
+const typeSizeValue = document.querySelector('#type-size-value');
+const typeAlternates = document.querySelector('#type-alternates');
+const typeTracking = document.querySelector('#type-tracking');
+const typeTrackingValue = document.querySelector('#type-tracking-value');
+
+if (typeTester && typeSize && typeSizeValue) {
+  if (window.matchMedia('(max-width: 700px)').matches) typeSize.value = '72';
+  const updateTypeSize = () => {
+    const size = `${typeSize.value}px`;
+    typeTester.closest('.type-tester')?.style.setProperty('--tester-size', size);
+    typeSizeValue.value = size;
+    typeSizeValue.textContent = size;
+  };
+  updateTypeSize();
+  typeSize.addEventListener('input', updateTypeSize);
+  const updateTypeTracking = () => {
+    if (!typeTracking || !typeTrackingValue) return;
+    const value = Number(typeTracking.value);
+    const display = `${value < 0 ? '−' : ''}${Math.abs(value).toFixed(2)} em`;
+    typeTester.closest('.type-tester')?.style.setProperty('--tester-tracking', `${value}em`);
+    typeTrackingValue.value = display;
+    typeTrackingValue.textContent = display;
+  };
+  updateTypeTracking();
+  typeTracking?.addEventListener('input', updateTypeTracking);
+  typeAlternates?.addEventListener('change', () => {
+    typeTester.classList.toggle('has-alternates', typeAlternates.checked);
+  });
+}
+
 const glyphGroups = [
   { name: 'Latin uppercase', codePoints: [
     ...Array.from({ length: 26 }, (_, index) => 0x0041 + index),
