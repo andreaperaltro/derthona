@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Derthona Display";
-  src: url("assets/fonts/DerthonaDisplay-WIPV01-Regular.woff2") format("woff2");
+  src: url("assets/fonts/DerthonaDisplay-Regular.woff2") format("woff2");
   font-weight: 700;
   font-display: swap;
 }
@@ -195,9 +195,36 @@ a { color: inherit; }
 .type-section .section-head { margin: 0; }
 .type-display { align-self: center; color: var(--red); }
 .type-display p { margin: 0; font: 700 clamp(70px, 12vw, 180px)/.74 var(--display); letter-spacing: -.04em; }
-.type-meta { grid-column: 2; border-top: 1px solid var(--line); padding-top: 32px; display: grid; grid-template-columns: 1fr 1.3fr; gap: 40px; }
-.type-meta > p:not(.micro-label) { margin: 0; font-size: 18px; line-height: 1.5; }
-.alphabet { grid-column: 1 / -1; color: var(--theme-muted); font: 700 clamp(18px, 2.4vw, 34px)/1.5 var(--display); letter-spacing: .08em; }
+.display-font-panel { grid-column: 1 / -1; border-top: 1px solid var(--line); }
+.display-font-intro, .display-font-actions { padding: clamp(30px, 4vw, 56px) 0; }
+.display-font-intro { display: grid; grid-template-columns: .7fr 1.3fr; gap: 8vw; }
+.display-font-intro h3 { grid-column: 2; margin: 0; color: var(--red); font: 700 clamp(56px, 8vw, 118px)/.82 var(--display); letter-spacing: -.03em; text-transform: uppercase; }
+.display-font-intro > p:last-child { grid-column: 2; max-width: 620px; margin: 0; font-size: clamp(18px, 2vw, 24px); line-height: 1.45; }
+.display-font-actions { display: grid; grid-template-columns: .7fr 1.3fr; gap: 8vw; border-top: 1px solid var(--line); }
+.font-downloads { grid-column: 2; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+.font-downloads a { min-height: 92px; padding: 18px 20px; display: flex; align-items: center; gap: 10px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); color: inherit; font: 700 clamp(20px, 2vw, 30px)/1 var(--display); letter-spacing: .02em; text-decoration: none; transition: color .25s ease, background-color .25s ease; }
+.font-downloads a span { font: 500 11px/1.25 var(--sans); letter-spacing: .08em; text-transform: uppercase; }
+.font-downloads a:hover { color: var(--red); background: var(--theme-surface); }
+.font-downloads a:focus-visible { color: var(--red); outline: 2px solid var(--red); outline-offset: -3px; }
+.glyph-accordion { border-top: 1px solid var(--line); }
+.glyph-accordion summary { min-height: 92px; padding: 24px 0; display: flex; align-items: center; justify-content: space-between; gap: 32px; cursor: pointer; list-style: none; font: 700 clamp(28px, 3vw, 48px)/.9 var(--display); text-transform: uppercase; }
+.glyph-accordion summary::-webkit-details-marker { display: none; }
+.glyph-accordion summary > span:first-child { display: flex; align-items: baseline; gap: 18px; }
+.glyph-accordion summary small { color: var(--theme-muted); font: 500 12px/1 var(--sans); letter-spacing: .1em; text-transform: uppercase; }
+.glyph-accordion-action { display: flex; align-items: center; gap: 16px; color: var(--theme-muted); font: 500 12px/1 var(--sans); letter-spacing: .1em; text-transform: uppercase; }
+.glyph-accordion-action b { width: 30px; height: 30px; display: grid; place-items: center; border: 1px solid currentColor; border-radius: 50%; font: 400 24px/1 var(--sans); transition: transform .35s cubic-bezier(.16,1,.3,1), color .25s ease; }
+.glyph-accordion[open] .glyph-accordion-action b { transform: rotate(45deg); color: var(--red); }
+.glyph-accordion[open] summary { border-bottom: 1px solid var(--line); }
+.glyph-sections { padding: 36px 0 0; display: grid; gap: 54px; }
+.glyph-section:last-child { padding-bottom: 56px; }
+.glyph-section h4 { margin: 0 0 16px; font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+.glyph-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(84px, 1fr)); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+.glyph-card { min-height: 108px; padding: 13px 10px 11px; display: flex; flex-direction: column; justify-content: space-between; overflow: hidden; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.glyph-character { min-height: 58px; display: grid; place-items: center; color: var(--red); font: 700 clamp(34px, 3.2vw, 54px)/1 var(--display); transform-origin: center; transition: transform .32s cubic-bezier(.16,1,.3,1); }
+.glyph-character.is-alternate { font-feature-settings: "ss01" 1; }
+.glyph-section[data-feature="ss01"] .glyph-card { background: var(--theme-surface); }
+.glyph-character.is-combining { font-size: clamp(25px, 2.4vw, 42px); }
+.glyph-code { color: var(--theme-muted); font: 500 10px/1 var(--sans); letter-spacing: .06em; text-align: center; }
 .type-families { grid-column: 1 / -1; margin-top: 110px; display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
 .type-family { min-height: 470px; padding: clamp(28px, 3.5vw, 50px); display: flex; flex-direction: column; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .type-family .type-specimen { flex: 1; margin: 60px 0 45px; }
@@ -239,6 +266,13 @@ a { color: inherit; }
 .manual-footer img { max-height: 70px; }
 .manual-footer p { margin: 0; max-width: 580px; font-weight: 700; }
 .manual-footer a { font-size: 12px; font-weight: 700; text-transform: uppercase; text-decoration: none; }
+.footer-credits { grid-column: 1 / -1; padding-top: 28px; display: flex; align-items: center; justify-content: space-between; gap: 20px 40px; border-top: 1px solid rgba(255,255,255,.24); }
+.manual-footer .footer-credits p { max-width: none; color: rgba(255,255,255,.68); font-size: 12px; font-weight: 500; }
+.manual-footer .footer-credits a { margin-left: 4px; color: var(--white); letter-spacing: .04em; }
+
+@media (hover: hover) {
+  .glyph-card:hover .glyph-character { transform: scale(1.16); }
+}
 
 main img[data-lightbox-ready] { cursor: zoom-in; }
 .image-lightbox { width: min(94vw, 1500px); max-width: none; height: min(92vh, 1050px); max-height: none; padding: 0; border: 0; background: transparent; color: var(--white); overflow: visible; }
@@ -295,11 +329,13 @@ main img[data-lightbox-ready] { cursor: zoom-in; }
   .clearspace { gap: 40px; }
   .palette { grid-template-columns: 1fr; }
   .swatch { min-height: 370px; }
-  .type-meta, .type-meta { grid-column: 1; }
+  .display-font-intro, .display-font-actions { grid-template-columns: 1fr; gap: 22px; }
+  .display-font-intro h3, .display-font-intro > p:last-child, .font-downloads { grid-column: 1; }
   .type-families { grid-template-columns: 1fr; }
   .type-family { min-height: 400px; }
   .manual-footer { grid-template-columns: 1fr; }
   .manual-footer img { max-width: 250px; }
+  .footer-credits { flex-direction: column; align-items: flex-start; }
 }
 
 @media (max-width: 560px) {
@@ -319,6 +355,11 @@ main img[data-lightbox-ready] { cursor: zoom-in; }
   .principles-list li { grid-template-columns: 40px 1fr; }
   .principles-list em { grid-column: 2; }
   .pillars-grid { grid-template-columns: 1fr; }
+  .display-font-intro h3 { font-size: clamp(52px, 16vw, 76px); }
+  .font-downloads { grid-template-columns: 1fr; }
+  .glyph-accordion summary { min-height: 118px; align-items: flex-start; flex-direction: column; gap: 14px; }
+  .glyph-grid { grid-template-columns: repeat(auto-fill, minmax(68px, 1fr)); }
+  .glyph-card { min-height: 92px; }
   .image-lightbox { width: 94vw; height: 84vh; }
 }
 
