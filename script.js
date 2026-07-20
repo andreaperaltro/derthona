@@ -143,7 +143,11 @@ const monochromeAsset = (asset) => asset.replace('assets/official/', 'assets/off
 const monochromeDownload = (asset) => asset.replace('assets/downloads/', 'assets/downloads/monochrome/');
 
 document.querySelectorAll('.logo-showcase img[data-dark-src]').forEach((image) => {
-  [image.dataset.darkSrc, monochromeAsset(image.dataset.lightSrc), monochromeAsset(image.dataset.darkSrc)].forEach((asset) => {
+  [
+    image.dataset.darkSrc,
+    image.dataset.monoLightSrc || monochromeAsset(image.dataset.lightSrc),
+    image.dataset.monoDarkSrc || monochromeAsset(image.dataset.darkSrc),
+  ].forEach((asset) => {
     const preload = new Image();
     preload.src = asset;
   });
@@ -164,12 +168,14 @@ const setLogoPreview = (theme = logoShowcase?.dataset.theme, colour = logoShowca
     logoShowcase.dataset.colour = colour;
     logoShowcase.querySelectorAll('img[data-light-src]').forEach((image) => {
       const asset = theme === 'dark' ? image.dataset.darkSrc : image.dataset.lightSrc;
-      image.src = colour === 'monochrome' ? monochromeAsset(asset) : asset;
+      const monochrome = theme === 'dark' ? image.dataset.monoDarkSrc : image.dataset.monoLightSrc;
+      image.src = colour === 'monochrome' ? (monochrome || monochromeAsset(asset)) : asset;
     });
     logoShowcase.querySelectorAll('.asset-download').forEach((link) => {
       const asset = theme === 'dark' ? link.dataset.darkHref : link.dataset.lightHref;
+      const monochrome = theme === 'dark' ? link.dataset.monoDarkHref : link.dataset.monoLightHref;
       link.href = colour === 'monochrome'
-        ? (link.dataset.assetFormat === 'svg' ? monochromeAsset(asset) : monochromeDownload(asset))
+        ? (monochrome || (link.dataset.assetFormat === 'svg' ? monochromeAsset(asset) : monochromeDownload(asset)))
         : asset;
     });
     requestAnimationFrame(() => logoShowcase.classList.remove('is-switching'));
