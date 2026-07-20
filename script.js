@@ -136,31 +136,48 @@ updateLogoScale(false);
 
 const logoShowcase = document.querySelector('.logo-showcase');
 const logoThemeButtons = document.querySelectorAll('[data-logo-theme]');
+const logoColourButtons = document.querySelectorAll('[data-logo-colour]');
 let logoThemeTimer;
 
+const monochromeAsset = (asset) => asset.replace('assets/official/', 'assets/official/monochrome/');
+const monochromeDownload = (asset) => asset.replace('assets/downloads/', 'assets/downloads/monochrome/');
+
 document.querySelectorAll('.logo-showcase img[data-dark-src]').forEach((image) => {
-  const darkAsset = new Image();
-  darkAsset.src = image.dataset.darkSrc;
+  [image.dataset.darkSrc, monochromeAsset(image.dataset.lightSrc), monochromeAsset(image.dataset.darkSrc)].forEach((asset) => {
+    const preload = new Image();
+    preload.src = asset;
+  });
 });
 
-const setLogoTheme = (theme) => {
-  if (!logoShowcase || logoShowcase.dataset.theme === theme) return;
+document.querySelectorAll('.asset-download').forEach((link) => {
+  link.dataset.assetFormat = link.dataset.lightHref.endsWith('.svg') ? 'svg' : 'raster';
+});
+
+const setLogoPreview = (theme = logoShowcase?.dataset.theme, colour = logoShowcase?.dataset.colour) => {
+  if (!logoShowcase || (logoShowcase.dataset.theme === theme && logoShowcase.dataset.colour === colour)) return;
   window.clearTimeout(logoThemeTimer);
   logoShowcase.classList.add('is-switching');
   logoThemeButtons.forEach((button) => button.setAttribute('aria-pressed', String(button.dataset.logoTheme === theme)));
+  logoColourButtons.forEach((button) => button.setAttribute('aria-pressed', String(button.dataset.logoColour === colour)));
   logoThemeTimer = window.setTimeout(() => {
     logoShowcase.dataset.theme = theme;
+    logoShowcase.dataset.colour = colour;
     logoShowcase.querySelectorAll('img[data-light-src]').forEach((image) => {
-      image.src = theme === 'dark' ? image.dataset.darkSrc : image.dataset.lightSrc;
+      const asset = theme === 'dark' ? image.dataset.darkSrc : image.dataset.lightSrc;
+      image.src = colour === 'monochrome' ? monochromeAsset(asset) : asset;
     });
     logoShowcase.querySelectorAll('.asset-download').forEach((link) => {
-      link.href = theme === 'dark' ? link.dataset.darkHref : link.dataset.lightHref;
+      const asset = theme === 'dark' ? link.dataset.darkHref : link.dataset.lightHref;
+      link.href = colour === 'monochrome'
+        ? (link.dataset.assetFormat === 'svg' ? monochromeAsset(asset) : monochromeDownload(asset))
+        : asset;
     });
     requestAnimationFrame(() => logoShowcase.classList.remove('is-switching'));
   }, 150);
 };
 
-logoThemeButtons.forEach((button) => button.addEventListener('click', () => setLogoTheme(button.dataset.logoTheme)));
+logoThemeButtons.forEach((button) => button.addEventListener('click', () => setLogoPreview(button.dataset.logoTheme)));
+logoColourButtons.forEach((button) => button.addEventListener('click', () => setLogoPreview(undefined, button.dataset.logoColour)));
 
 const glyphRoot = document.querySelector('#derthona-glyphs');
 const typeTester = document.querySelector('#type-tester-input');

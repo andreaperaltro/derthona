@@ -164,12 +164,18 @@
       </section>
       <div class="logo-theme-bar reveal">
         <div><p class="micro-label">Logo asset library</p><span>Preview and download the correct artwork for each background.</span></div>
-        <div class="logo-theme-switch" role="group" aria-label="Logo preview background">
-          <button type="button" data-logo-theme="light" aria-pressed="true">Light</button>
-          <button type="button" data-logo-theme="dark" aria-pressed="false">Dark</button>
+        <div class="logo-library-controls">
+          <div class="logo-theme-switch" role="group" aria-label="Logo preview background">
+            <button type="button" data-logo-theme="light" aria-pressed="true">Light</button>
+            <button type="button" data-logo-theme="dark" aria-pressed="false">Dark</button>
+          </div>
+          <div class="logo-theme-switch" role="group" aria-label="Logo artwork version">
+            <button type="button" data-logo-colour="colour" aria-pressed="true">Colour</button>
+            <button type="button" data-logo-colour="monochrome" aria-pressed="false">Monochrome</button>
+          </div>
         </div>
       </div>
-      <div class="logo-showcase" data-theme="light">
+      <div class="logo-showcase" data-theme="light" data-colour="colour">
         <article class="logo-card reveal">
           <span class="logo-label">01 · Lion symbol</span>
           <img src="assets/official/lion.svg" data-light-src="assets/official/lion.svg" data-dark-src="assets/official/lion-white.svg" alt="Derthona lion symbol">
@@ -217,7 +223,7 @@
           <h3>Every signature needs room to retain its authority.</h3>
           <p>X is derived from each symbol. Internal relationships and the minimum 3X protection area must always be preserved.</p>
         </div>
-        <img src="assets/official/respect-area.png" alt="Official respect-area construction for the Derthona logo family">
+        <img src="assets/official/respect-area.svg" alt="Official respect-area construction for the Derthona logo family">
       </div>
     </section>
 
