@@ -185,6 +185,44 @@ const setLogoPreview = (theme = logoShowcase?.dataset.theme, colour = logoShowca
 logoThemeButtons.forEach((button) => button.addEventListener('click', () => setLogoPreview(button.dataset.logoTheme)));
 logoColourButtons.forEach((button) => button.addEventListener('click', () => setLogoPreview(undefined, button.dataset.logoColour)));
 
+const composedShowcase = document.querySelector('.composed-grid');
+const composedThemeButtons = document.querySelectorAll('[data-composed-theme]');
+const composedColourButtons = document.querySelectorAll('[data-composed-colour]');
+let composedThemeTimer;
+
+composedShowcase?.querySelectorAll('img[data-light-src]').forEach((image) => {
+  [image.dataset.darkSrc, image.dataset.monoLightSrc, image.dataset.monoDarkSrc].forEach((asset) => {
+    const preload = new Image();
+    preload.src = asset;
+  });
+});
+
+const setComposedPreview = (theme = composedShowcase?.dataset.theme, colour = composedShowcase?.dataset.colour) => {
+  if (!composedShowcase || (composedShowcase.dataset.theme === theme && composedShowcase.dataset.colour === colour)) return;
+  window.clearTimeout(composedThemeTimer);
+  composedShowcase.classList.add('is-switching');
+  composedThemeButtons.forEach((button) => button.setAttribute('aria-pressed', String(button.dataset.composedTheme === theme)));
+  composedColourButtons.forEach((button) => button.setAttribute('aria-pressed', String(button.dataset.composedColour === colour)));
+  composedThemeTimer = window.setTimeout(() => {
+    composedShowcase.dataset.theme = theme;
+    composedShowcase.dataset.colour = colour;
+    composedShowcase.querySelectorAll('img[data-light-src]').forEach((image) => {
+      image.src = colour === 'monochrome'
+        ? (theme === 'dark' ? image.dataset.monoDarkSrc : image.dataset.monoLightSrc)
+        : (theme === 'dark' ? image.dataset.darkSrc : image.dataset.lightSrc);
+    });
+    composedShowcase.querySelectorAll('.composed-download').forEach((link) => {
+      link.href = colour === 'monochrome'
+        ? (theme === 'dark' ? link.dataset.monoDarkHref : link.dataset.monoLightHref)
+        : (theme === 'dark' ? link.dataset.darkHref : link.dataset.lightHref);
+    });
+    requestAnimationFrame(() => composedShowcase.classList.remove('is-switching'));
+  }, 150);
+};
+
+composedThemeButtons.forEach((button) => button.addEventListener('click', () => setComposedPreview(button.dataset.composedTheme)));
+composedColourButtons.forEach((button) => button.addEventListener('click', () => setComposedPreview(undefined, button.dataset.composedColour)));
+
 const glyphRoot = document.querySelector('#derthona-glyphs');
 const typeTester = document.querySelector('#type-tester-input');
 const typeSize = document.querySelector('#type-size');
