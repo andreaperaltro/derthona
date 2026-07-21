@@ -408,9 +408,9 @@ main img[data-lightbox-ready] { cursor: zoom-in; }
   .section-head { margin-bottom: 55px; }
   .section-number { top: 105px; }
   .logo-showcase { grid-template-columns: 1fr; }
-  .logo-library-controls { width: 100%; flex-wrap: nowrap; gap: 6px; }
-  .logo-theme-switch { flex: 1; min-width: 0; }
-  .logo-theme-switch button { flex: 1; min-width: 0; padding: 9px 8px; font-size: 10px; }
+  .logo-library-controls { width: 100%; display: grid; grid-template-columns: 1fr; gap: 8px; }
+  .logo-theme-switch { width: 100%; min-width: 0; }
+  .logo-theme-switch button { flex: 1; min-width: 0; padding: 11px 10px; font-size: 10px; }
   .logo-scale-tool { margin-bottom: 80px; }
   .scale-stage { min-height: 390px; }
   .scale-logo-wrap { width: 92%; height: 230px; }
