@@ -279,7 +279,7 @@ a { color: inherit; }
 .principles-list em { font-size: clamp(16px, 2vw, 24px); font-style: normal; }
 
 .visuals-section { border-top: 1px solid var(--line); }
-.visual-concept { max-width: 1180px; margin: 0 0 100px; padding-top: 30px; display: grid; grid-template-columns: .45fr 1.55fr; gap: 8vw; border-top: 1px solid var(--line); }
+.visual-concept { width: 100%; margin: 0 0 100px; padding-top: 30px; display: grid; grid-template-columns: .45fr 1.55fr; gap: 8vw; border-top: 1px solid var(--line); }
 .visual-concept > p:last-child { margin: 0; font: 400 clamp(24px, 3.1vw, 44px)/1.18 var(--accent); }
 .curve-variations { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
 .curve-card { min-width: 0; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
