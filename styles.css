@@ -164,7 +164,7 @@ a { color: inherit; }
 .logo-theme-switch button[aria-pressed="true"] { background: var(--theme-text); color: var(--theme-bg); }
 .logo-showcase { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(45,41,38,.15); border: 1px solid rgba(45,41,38,.15); transition: background-color .25s ease; }
 .logo-card { min-height: 390px; background: var(--white); color: var(--black); padding: 28px; display: flex; flex-direction: column; justify-content: space-between; }
-.logo-card img { width: 100%; height: 270px; object-fit: contain; }
+.logo-card img { width: 100%; height: 270px; padding: clamp(20px, 2.5vw, 42px); box-sizing: border-box; object-fit: contain; }
 .logo-showcase[data-theme="dark"] { background: rgba(255,255,255,.18); border-color: var(--black); }
 .logo-showcase[data-theme="dark"] .logo-card { background: var(--black); color: var(--white); }
 .logo-showcase .logo-card, .logo-showcase .logo-card img { transition: background-color .25s ease, color .25s ease, opacity .18s ease; }
@@ -190,7 +190,7 @@ a { color: inherit; }
 .composed-theme-bar { margin-top: 0; }
 .composed-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; border: 1px solid var(--line); background: var(--line); }
 .composed-card { min-height: 520px; padding: clamp(26px, 3vw, 42px); display: flex; flex-direction: column; justify-content: space-between; background: var(--white); color: var(--black); }
-.composed-card img { width: 100%; height: 350px; object-fit: contain; }
+.composed-card img { width: 100%; height: 350px; padding: clamp(24px, 3vw, 52px); box-sizing: border-box; object-fit: contain; }
 .composed-grid[data-theme="dark"] { border-color: var(--black); background: rgba(255,255,255,.18); }
 .composed-grid[data-theme="dark"] .composed-card { background: var(--black); color: var(--white); }
 .composed-grid .composed-card, .composed-grid .composed-card img { transition: background-color .25s ease, color .25s ease, opacity .18s ease; }
@@ -271,6 +271,7 @@ a { color: inherit; }
 .type-family > div { padding-top: 24px; display: grid; gap: 10px; border-top: 1px solid var(--line); }
 .type-family > div strong { font-size: 11px; letter-spacing: .1em; text-transform: uppercase; }
 .type-family > div span { color: var(--theme-muted); font-size: 15px; line-height: 1.45; }
+.type-family .type-role { margin-top: 8px; color: var(--red); font: 700 12px/1 var(--sans); letter-spacing: .08em; text-transform: uppercase; }
 
 .voice-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line); border: 1px solid var(--line); }
 .voice-do, .voice-dont { padding: clamp(30px, 5vw, 70px); background: var(--theme-surface); }
