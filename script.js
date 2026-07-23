@@ -95,10 +95,10 @@ const scaleUse = document.querySelector('.scale-readout small');
 const rangeWrap = document.querySelector('.range-wrap');
 
 const logoStates = [
-  { max: 18, lightSrc: 'assets/official/horizontal.svg', darkSrc: 'assets/official/horizontal-white.svg', name: 'Horizontal version', use: 'Large formats', width: '92%', height: '170px' },
-  { max: 39, lightSrc: 'assets/official/contraption.svg', darkSrc: 'assets/official/contraption-white.svg', name: 'Contraption', use: 'Medium formats', width: '62%', height: '190px' },
-  { max: 60, lightSrc: 'assets/official/stacked-big.svg', darkSrc: 'assets/official/stacked-big-white.svg', name: 'Stacked big', use: 'Compact formats', width: '48%', height: '220px' },
-  { max: 80, lightSrc: 'assets/official/stacked-small.svg', darkSrc: 'assets/official/stacked-small-white.svg', name: 'Stacked small', use: 'Small formats', width: '30%', height: '165px' },
+  { max: 18, lightSrc: 'assets/official/horizontal.svg', darkSrc: 'assets/official/horizontal-white.svg', name: 'Horizontal', use: 'Large formats', width: '92%', height: '170px' },
+  { max: 39, lightSrc: 'assets/official/contraption.svg', darkSrc: 'assets/official/contraption-white.svg', name: 'Lockup', use: 'Medium formats', width: '62%', height: '190px' },
+  { max: 60, lightSrc: 'assets/official/stacked-big.svg', darkSrc: 'assets/official/stacked-big-white.svg', name: 'Stacked Primary', use: 'Compact formats', width: '48%', height: '220px' },
+  { max: 80, lightSrc: 'assets/official/stacked-small.svg', darkSrc: 'assets/official/stacked-small-white.svg', name: 'Stacked Compact', use: 'Small formats', width: '30%', height: '165px' },
   { max: 100, lightSrc: 'assets/official/lion.svg', darkSrc: 'assets/official/lion-white.svg', name: 'Lion symbol', use: 'Very small formats', width: '15%', height: '170px' }
 ];
 
