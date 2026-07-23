@@ -74,7 +74,30 @@ document.addEventListener('keydown', (event) => {
 });
 
 const copyStatus = document.querySelector('.copy-status');
+const colorCursorHint = document.querySelector('.color-cursor-hint');
+const canUseColorCursorHint = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+const moveColorCursorHint = (event) => {
+  if (!colorCursorHint || !canUseColorCursorHint) return;
+  const gap = 18;
+  const edge = 12;
+  const left = Math.min(event.clientX + gap, window.innerWidth - colorCursorHint.offsetWidth - edge);
+  const top = Math.min(event.clientY + gap, window.innerHeight - colorCursorHint.offsetHeight - edge);
+  colorCursorHint.style.left = `${Math.max(edge, left)}px`;
+  colorCursorHint.style.top = `${Math.max(edge, top)}px`;
+};
+
 document.querySelectorAll('.swatch').forEach((swatch) => {
+  swatch.addEventListener('pointerenter', (event) => {
+    if (!colorCursorHint || !canUseColorCursorHint) return;
+    colorCursorHint.textContent = `Click to copy · ${swatch.dataset.color}`;
+    colorCursorHint.classList.add('is-visible');
+    moveColorCursorHint(event);
+  });
+  swatch.addEventListener('pointermove', moveColorCursorHint);
+  swatch.addEventListener('pointerleave', () => {
+    colorCursorHint?.classList.remove('is-visible');
+  });
   swatch.addEventListener('click', async () => {
     const color = swatch.dataset.color;
     try {
