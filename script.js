@@ -330,6 +330,21 @@ if (glyphRoot) {
   });
 }
 
+const fontGuideDialog = document.querySelector('#font-guide-dialog');
+const fontGuideTrigger = document.querySelector('.font-guide-trigger');
+const fontGuideClose = fontGuideDialog?.querySelector('.font-guide-close');
+
+fontGuideTrigger?.addEventListener('click', () => {
+  fontGuideDialog?.showModal();
+  fontGuideClose?.focus();
+});
+
+fontGuideClose?.addEventListener('click', () => fontGuideDialog.close());
+fontGuideDialog?.addEventListener('click', (event) => {
+  if (event.target === fontGuideDialog) fontGuideDialog.close();
+});
+fontGuideDialog?.addEventListener('close', () => fontGuideTrigger?.focus());
+
 const lightbox = document.querySelector('.image-lightbox');
 const lightboxImage = lightbox?.querySelector('img');
 const lightboxCaption = lightbox?.querySelector('figcaption');

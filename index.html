@@ -339,7 +339,12 @@
           <p>A bespoke display typeface built from the visual heritage of Tortona and reinterpreted for a contemporary basketball identity.</p>
         </div>
         <div class="display-font-actions">
-          <p class="micro-label">Download font files</p>
+          <div class="font-actions-copy">
+            <p class="micro-label">Download font files</p>
+            <button class="font-guide-trigger" type="button" aria-haspopup="dialog" aria-controls="font-guide-dialog">
+              Installation &amp; usage guide <span aria-hidden="true">↗</span>
+            </button>
+          </div>
           <div class="font-downloads" aria-label="Download Derthona Display font files">
             <a href="assets/fonts/DerthonaDisplay-Regular.otf" download>OTF <span>OpenType</span> ↓</a>
             <a href="assets/fonts/DerthonaDisplay-Regular.ttf" download>TTF <span>TrueType</span> ↓</a>
@@ -463,6 +468,140 @@
       </div>
     </footer>
   </main>
+  <dialog id="font-guide-dialog" class="font-guide-dialog" aria-labelledby="font-guide-title">
+    <div class="font-guide-shell">
+      <header class="font-guide-header">
+        <div>
+          <p class="micro-label">Derthona Display</p>
+          <h2 id="font-guide-title">Install &amp; use the typeface.</h2>
+        </div>
+        <button class="font-guide-close" type="button" aria-label="Close font guide">Close ×</button>
+      </header>
+      <div class="font-guide-scroll">
+        <section class="font-guide-section" aria-labelledby="font-files-title">
+          <div>
+            <p class="micro-label">01 · Font files</p>
+            <h3 id="font-files-title">Choose the right format.</h3>
+          </div>
+          <div class="font-format-grid">
+            <article>
+              <span class="font-guide-tag">Desktop</span>
+              <h4>OTF</h4>
+              <p>Recommended for macOS and Windows. Use it in Word, Adobe apps, Figma and other desktop software.</p>
+            </article>
+            <article>
+              <span class="font-guide-tag">Desktop alternative</span>
+              <h4>TTF</h4>
+              <p>Use only when an older app or workflow requires TrueType. Install either OTF or TTF, not both.</p>
+            </article>
+            <article>
+              <span class="font-guide-tag">Web · Primary</span>
+              <h4>WOFF2</h4>
+              <p>The preferred, compressed format for modern browsers. Use it as the first source in CSS.</p>
+            </article>
+            <article>
+              <span class="font-guide-tag">Web · Fallback</span>
+              <h4>WOFF</h4>
+              <p>Add it after WOFF2 for older browser support. Webfont files do not need to be installed on your computer.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="font-guide-section font-install-section" aria-labelledby="font-install-title">
+          <div>
+            <p class="micro-label">02 · Local installation</p>
+            <h3 id="font-install-title">Install once.<br>Then restart your apps.</h3>
+          </div>
+          <div class="font-install-grid">
+            <article>
+              <h4>macOS</h4>
+              <ol>
+                <li>Download the OTF file.</li>
+                <li>Double-click it and select <strong>Install Font</strong> in Font Book.</li>
+                <li>Close and reopen any app that was already running.</li>
+              </ol>
+            </article>
+            <article>
+              <h4>Windows</h4>
+              <ol>
+                <li>Download the OTF file.</li>
+                <li>Right-click it and choose <strong>Install</strong> or <strong>Install for all users</strong>.</li>
+                <li>Close and reopen any app that was already running.</li>
+              </ol>
+            </article>
+          </div>
+        </section>
+
+        <section class="font-guide-section font-alternates-section" aria-labelledby="font-alternates-title">
+          <div>
+            <p class="micro-label">03 · Alternate style</p>
+            <h3 id="font-alternates-title">Activate Stylistic Set 1.</h3>
+            <p class="font-guide-lead">The alternate style is an OpenType feature named <strong>ss01</strong>. It replaces selected uppercase forms for A, B, D, E, F, H, K, P, Q, R and T. The feature is included in OTF, TTF, WOFF and WOFF2.</p>
+          </div>
+          <div class="software-guides">
+            <details>
+              <summary><span>Microsoft Word</span><b aria-hidden="true">+</b></summary>
+              <div>
+                <p>Use the desktop app. Select the text, open the <strong>Font</strong> dialog, choose <strong>Advanced</strong>, then under <strong>OpenType Features</strong> set <strong>Stylistic sets</strong> to <strong>1</strong>.</p>
+                <p class="font-guide-note">On macOS, the Font dialog may be under Format → Font. Word Online and mobile versions may not expose this control.</p>
+                <a class="software-guide-link" href="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.stylisticset?view=word-pia" target="_blank" rel="noopener noreferrer">Microsoft reference ↗</a>
+              </div>
+            </details>
+            <details>
+              <summary><span>Adobe Illustrator</span><b aria-hidden="true">+</b></summary>
+              <div>
+                <p>Select the text, then go to <strong>Window → Type → OpenType</strong>. Open <strong>Stylistic Sets</strong> and choose <strong>Set 1</strong>.</p>
+                <a class="software-guide-link" href="https://helpx.adobe.com/uk/illustrator/desktop/design-with-text/special-characters-glyphs/add-stylistic-sets-to-selected-text.html" target="_blank" rel="noopener noreferrer">Official Illustrator guide ↗</a>
+              </div>
+            </details>
+            <details>
+              <summary><span>Adobe Photoshop</span><b aria-hidden="true">+</b></summary>
+              <div>
+                <p>Select the text, then open <strong>Window → Character</strong>. From the Character panel menu choose <strong>OpenType</strong>, then activate <strong>Stylistic Set 1</strong> when available.</p>
+                <p class="font-guide-note">If your Photoshop version does not show Stylistic Sets, use Window → Glyphs to select alternates manually.</p>
+                <a class="software-guide-link" href="https://helpx.adobe.com/photoshop/desktop/text-typography/select-manage-fonts/apply-opentype-features.html" target="_blank" rel="noopener noreferrer">Official Photoshop guide ↗</a>
+              </div>
+            </details>
+            <details>
+              <summary><span>Figma</span><b aria-hidden="true">+</b></summary>
+              <div>
+                <p>Select the text layer. In the right sidebar open <strong>Typography settings</strong>, find <strong>OpenType features</strong>, then activate <strong>Stylistic set 1</strong>.</p>
+                <p class="font-guide-note">For browser-based Figma, make sure the font is available through the Figma font installer or your organization’s font service.</p>
+                <a class="software-guide-link" href="https://help.figma.com/hc/en-us/articles/4913951097367-Use-OpenType-features" target="_blank" rel="noopener noreferrer">Official Figma guide ↗</a>
+              </div>
+            </details>
+            <details>
+              <summary><span>Canva</span><b aria-hidden="true">+</b></summary>
+              <div>
+                <p>Upload the OTF or TTF through <strong>Brand Kit</strong> if your account and permissions allow custom fonts. Canva does not currently provide a control for OpenType stylistic sets such as ss01.</p>
+                <p class="font-guide-note">For alternate letters, prepare the final wording in Illustrator, Photoshop or Figma, convert it to outlines, export SVG or PNG, then upload it to Canva.</p>
+                <a class="software-guide-link" href="https://www.canva.com/learn/how-to-build-a-brand-kit/" target="_blank" rel="noopener noreferrer">Official Canva guide ↗</a>
+              </div>
+            </details>
+          </div>
+        </section>
+
+        <section class="font-guide-section font-web-section" aria-labelledby="font-web-title">
+          <div>
+            <p class="micro-label">04 · Web use</p>
+            <h3 id="font-web-title">Load the font.<br>Switch on ss01.</h3>
+          </div>
+          <pre><code>@font-face {
+  font-family: "Derthona Display";
+  src:
+    url("DerthonaDisplay-Regular.woff2") format("woff2"),
+    url("DerthonaDisplay-Regular.woff") format("woff");
+  font-style: normal;
+  font-weight: 400;
+}
+
+.alternate-style {
+  font-feature-settings: "ss01" 1;
+}</code></pre>
+        </section>
+      </div>
+    </div>
+  </dialog>
   <dialog class="image-lightbox" aria-label="Image preview">
     <button class="lightbox-close" type="button" aria-label="Close image preview">Close ×</button>
     <figure class="lightbox-canvas">
