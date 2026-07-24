@@ -1,7 +1,7 @@
 ---
 name: "Derthona Basket"
 tagline: "Rooted in history. Built for tomorrow."
-version: 1
+version: 2
 language: en
 type: master
 ---
@@ -200,16 +200,40 @@ Approved files:
 - [TTF](assets/fonts/DerthonaDisplay-Regular.ttf)
 - [WOFF](assets/fonts/DerthonaDisplay-Regular.woff)
 - [WOFF2](assets/fonts/DerthonaDisplay-Regular.woff2)
+- [Complete family package](assets/fonts/downloads/derthona-display.zip)
 
 #### PP Neue Montreal
 
 Use for subtitles, body copy, navigation, captions and functional information.
 This is the information typeface.
 
+[Download PP Neue Montreal in OTF, TTF, WOFF and WOFF2](assets/fonts/downloads/pp-neue-montreal.zip).
+
 #### PP Fragment
 
 Use for editorial accents, quotes, manifesto excerpts and expressive moments.
 This is the editorial typeface.
+
+[Download PP Fragment in OTF, TTF, WOFF and WOFF2](assets/fonts/downloads/pp-fragment.zip).
+
+### Brand Templates
+
+The current business-card and letterhead files are working options. The
+collection may be refined as the identity system evolves. Use the supplied PDF
+masters rather than recreating the layouts from preview images.
+
+Business cards:
+
+- [V1](assets/templates/business-cards/business-card-v1.pdf)
+- [V2](assets/templates/business-cards/business-card-v2.pdf)
+- [V3](assets/templates/business-cards/business-card-v3.pdf)
+- [V4](assets/templates/business-cards/business-card-v4.pdf)
+
+Letterheads:
+
+- [Centered](assets/templates/letterheads/letterhead-centered.pdf)
+- [Competition](assets/templates/letterheads/letterhead-competition.pdf)
+- [Left aligned](assets/templates/letterheads/letterhead-left-aligned.pdf)
 
 ### Logo System
 
