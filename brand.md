@@ -218,16 +218,14 @@ This is the editorial typeface.
 
 ### Brand Templates
 
-The current business-card and letterhead files are working options. The
-collection may be refined as the identity system evolves. Use the supplied PDF
-masters rather than recreating the layouts from preview images.
+The business card is final approved artwork. The letterhead files remain
+working options. Use the supplied master files rather than recreating the
+layouts from preview images.
 
-Business cards:
+Business card:
 
-- [V1](assets/templates/business-cards/business-card-v1.pdf)
-- [V2](assets/templates/business-cards/business-card-v2.pdf)
-- [V3](assets/templates/business-cards/business-card-v3.pdf)
-- [V4](assets/templates/business-cards/business-card-v4.pdf)
+- [PDF master](assets/templates/business-cards/business-card-final.pdf)
+- [Adobe Illustrator master](assets/templates/business-cards/business-card-final.ai)
 
 Letterheads:
 
