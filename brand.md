@@ -273,16 +273,13 @@ See the complete [composed logo library](index.html#logo).
 The visual language is built around **The Curve**: a graphic gesture where
 basketball and territory meet.
 
-The curve echoes:
-
-- the trajectory of the ball;
-- the energy of the curva;
-- the hills surrounding Tortona;
-- the vaulted architecture of Pier Luigi Nervi's Magazzini del Sale.
+The Curve echoes the trajectory of the ball, the energy of the Curva, the
+hills surrounding Tortona and the vaulted forms of Pier Luigi Nervi’s
+Magazzini del Sale.
 
 Through repetition and scale, these references become a dynamic and
-recognizable graphic language. Use centered, offset or architectural
-variations from the approved masters in
+distinctive graphic language. Use centered, offset or architectural variations
+from the approved masters in
 [the visual-language library](index.html#visuals).
 
 Design keywords: rooted, dynamic, architectural, intentional, contemporary,
