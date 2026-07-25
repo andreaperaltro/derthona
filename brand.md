@@ -1,7 +1,7 @@
 ---
 name: "Derthona Basket"
 tagline: "Rooted in history. Built for tomorrow."
-version: 2
+version: 3
 language: en
 type: master
 ---
@@ -194,13 +194,32 @@ The font includes OpenType Stylistic Set 1 (`ss01`) with alternate uppercase
 forms for A, B, D, E, F, H, K, P, Q, R and T. The feature is present in OTF,
 TTF, WOFF and WOFF2.
 
-Approved files:
+Usage principles:
 
-- [OTF](assets/fonts/DerthonaDisplay-Regular.otf)
-- [TTF](assets/fonts/DerthonaDisplay-Regular.ttf)
-- [WOFF](assets/fonts/DerthonaDisplay-Regular.woff)
-- [WOFF2](assets/fonts/DerthonaDisplay-Regular.woff2)
-- [Complete family package](assets/fonts/downloads/derthona-display.zip)
+- **Consistency:** Primary and alternate forms may appear in the same
+  composition. Once a form has been selected for a specific letter, it must be
+  used consistently throughout the same word, sentence or text block. If the
+  alternate A is selected, every A in that context must use the alternate form.
+  Different letters may independently use primary or alternate forms.
+- **“Derthona Basket” exception:** Always reproduce the exact codified
+  combination of primary and alternate characters used in the official logo.
+  Do not apply the complete alternate set automatically.
+- **Visual impact:** Use a maximum of six words per line. Prefer short, compact
+  statements. Whenever possible, set leading to the same value as the type
+  size, for example 100 pt type with 100 pt leading.
+- **Spacing:** Keep tracking at 0, use metric kerning and preserve the
+  intentionally tight spacing built into the font.
+- **Hierarchy:** Set Derthona Display between 66% and 100% larger than the
+  supporting paragraph size. If supporting text is 30 pt, use Derthona Display
+  between approximately 50 and 60 pt.
+
+Download package:
+
+- [Derthona Display 1.0 — all formats and usage guide](assets/fonts/downloads/derthona-display.zip)
+
+The package contains OTF and TTF files for desktop installation, WOFF and
+WOFF2 files for web use, and a text guide with the usage principles above.
+Version 1.0 is copyright Derthona Basket and was designed by ESC Studio.
 
 #### PP Neue Montreal
 
