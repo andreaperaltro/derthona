@@ -267,16 +267,16 @@ Responsive order from the largest to the smallest available format:
 
 Approved signatures:
 
-- [Lion symbol](assets/official/lion.svg)
+- [Lion symbol](assets/official/lion-symbol.svg)
 - [Crest](assets/official/crest.svg)
-- [Lockup](assets/official/contraption.svg)
+- [Lockup](assets/official/lockup.svg)
 - [Horizontal](assets/official/horizontal.svg)
-- [Stacked Primary](assets/official/stacked-big.svg)
-- [Stacked Compact](assets/official/stacked-small.svg)
-- [DB Monogram](assets/official/monogram.svg)
-- [D Monogram](assets/official/monograms/monogram-d-colour.svg)
-- [DB Lettermark](assets/official/monograms/monogram-db-colour.svg)
-- [Rose symbol](assets/official/rose.svg)
+- [Stacked Primary](assets/official/stacked-primary.svg)
+- [Stacked Compact](assets/official/stacked-compact.svg)
+- [DB Monogram](assets/official/db-monogram.svg)
+- [D Monogram](assets/official/monograms/d-monogram.svg)
+- [DB Lettermark](assets/official/monograms/db-lettermark.svg)
+- [Rose symbol](assets/official/rose-symbol.svg)
 
 Color and monochrome masters exist for light and dark backgrounds. Select the
 correct supplied file rather than recoloring artwork manually. See the complete
@@ -325,3 +325,12 @@ from the approved masters in
 
 Design keywords: rooted, dynamic, architectural, intentional, contemporary,
 distinctive, basketball-first.
+
+## Complete Asset Package
+
+Download the complete set of approved logo files, fonts, templates and visual
+language assets from the
+[Derthona Basket brand asset package](assets/downloads/derthona-basket-brand-assets.zip).
+
+The online brand manual remains the primary and most current source for asset
+selection and usage rules.
