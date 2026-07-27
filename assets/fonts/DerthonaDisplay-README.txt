@@ -2,7 +2,7 @@ DERTHONA DISPLAY
 Version 1.0
 
 Copyright © Derthona Basket
-Type design by ESC Studio
+Type design by ESC Design Studio
 
 
 PACKAGE CONTENTS

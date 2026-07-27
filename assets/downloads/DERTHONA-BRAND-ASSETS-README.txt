@@ -40,4 +40,4 @@ for brand rules, asset selection and usage guidance. Always consult the online
 manual before using or distributing these files.
 
 Brand identity by Andrea Perato
-Type design by ESC Studio
+Type design by ESC Design Studio

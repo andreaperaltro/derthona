@@ -219,7 +219,7 @@ Download package:
 
 The package contains OTF and TTF files for desktop installation, WOFF and
 WOFF2 files for web use, and a text guide with the usage principles above.
-Version 1.0 is copyright Derthona Basket and was designed by ESC Studio.
+Version 1.0 is copyright Derthona Basket and was designed by ESC Design Studio.
 
 #### PP Neue Montreal
 
