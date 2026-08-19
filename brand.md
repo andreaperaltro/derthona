@@ -282,6 +282,10 @@ Color and monochrome masters exist for light and dark backgrounds. Select the
 correct supplied file rather than recoloring artwork manually. See the complete
 [logo asset library](index.html#logo).
 
+SVG and PNG are available for light and dark backgrounds. JPG is offered only
+for light-background artwork because JPEG does not support transparency; use
+SVG or PNG for every dark-background application.
+
 ### Clear Space
 
 X is defined by the lion symbol. Internal proportions and a minimum clear space
@@ -298,6 +302,8 @@ Composed logos balance Derthona Basket with an approved partner identity.
 - Use the supplied horizontal or vertical composition.
 - Select the supplied color or monochrome version for the intended light or
   dark background.
+- Use SVG or PNG for dark-background compositions. JPG downloads are available
+  only for light-background artwork.
 
 Approved composed families:
 

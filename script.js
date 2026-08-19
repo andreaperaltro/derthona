@@ -180,6 +180,11 @@ document.querySelectorAll('.asset-download').forEach((link) => {
   link.dataset.assetFormat = link.dataset.lightHref.endsWith('.svg') ? 'svg' : 'raster';
 });
 
+const setJpgAvailability = (link, theme) => {
+  const isJpg = link.dataset.lightHref?.toLowerCase().endsWith('.jpg');
+  link.hidden = Boolean(isJpg && theme === 'dark');
+};
+
 const setLogoPreview = (theme = logoShowcase?.dataset.theme, color = logoShowcase?.dataset.color) => {
   if (!logoShowcase || (logoShowcase.dataset.theme === theme && logoShowcase.dataset.color === color)) return;
   window.clearTimeout(logoThemeTimer);
@@ -200,6 +205,7 @@ const setLogoPreview = (theme = logoShowcase?.dataset.theme, color = logoShowcas
       link.href = color === 'monochrome'
         ? (monochrome || (link.dataset.assetFormat === 'svg' ? monochromeAsset(asset) : monochromeDownload(asset)))
         : asset;
+      setJpgAvailability(link, theme);
     });
     requestAnimationFrame(() => logoShowcase.classList.remove('is-switching'));
   }, 150);
@@ -238,6 +244,7 @@ const setComposedPreview = (theme = composedShowcase?.dataset.theme, color = com
       link.href = color === 'monochrome'
         ? (theme === 'dark' ? link.dataset.monoDarkHref : link.dataset.monoLightHref)
         : (theme === 'dark' ? link.dataset.darkHref : link.dataset.lightHref);
+      setJpgAvailability(link, theme);
     });
     requestAnimationFrame(() => composedShowcase.classList.remove('is-switching'));
   }, 150);
