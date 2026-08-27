@@ -1,7 +1,7 @@
 ---
 name: "Derthona Basket"
 tagline: "Rooted in history. Built for tomorrow."
-version: 3
+version: 4
 language: en
 type: master
 ---
@@ -269,6 +269,7 @@ Approved signatures:
 
 - [Lion symbol](assets/official/lion-symbol.svg)
 - [Crest](assets/official/crest.svg)
+- [Crest V2](assets/official/crest-v2.svg)
 - [Lockup](assets/official/lockup.svg)
 - [Horizontal](assets/official/horizontal.svg)
 - [Stacked Primary](assets/official/stacked-primary.svg)
@@ -281,6 +282,11 @@ Approved signatures:
 Color and monochrome masters exist for light and dark backgrounds. Select the
 correct supplied file rather than recoloring artwork manually. See the complete
 [logo asset library](index.html#logo).
+
+The original Crest and Crest V2 are both approved signatures. Crest V2 is an
+alternative construction, not a replacement for the original Crest. Always use
+the supplied artwork for the selected version and do not combine components
+between the two constructions.
 
 SVG and PNG are available for light and dark backgrounds. JPG is offered only
 for light-background artwork because JPEG does not support transparency; use
