@@ -1,16 +1,15 @@
 DERTHONA DISPLAY
 Version 1.0
 
-Copyright © Derthona Basket
-Type design by ESC Design Studio
+Copyright © 2026 Derthona Basket. All rights reserved.
+Typeface designed by ESC Design Studio.
 
 
 PACKAGE CONTENTS
 
 DerthonaDisplay-Regular.otf
 OpenType font for desktop installation and professional design applications.
-Recommended when working in Adobe Illustrator, Photoshop, InDesign and other
-software with full OpenType feature support.
+Recommended for macOS and Windows desktop installation.
 
 DerthonaDisplay-Regular.ttf
 TrueType font for desktop installation and broad compatibility with operating
@@ -22,27 +21,20 @@ Web Open Font Format for browser use and compatibility with older web projects.
 DerthonaDisplay-Regular.woff2
 Modern, compressed webfont format. This is the preferred format for websites.
 
-All four formats include Stylistic Set 1 (ss01).
-
-
 USAGE PRINCIPLES
 
 1. CONSISTENCY
 
-Characters from the primary and alternate stylistic sets may be combined within
-the same composition.
+Letter case controls the design of each character. Type in lowercase to use
+the standard letterforms. Type in uppercase to use the alternate display forms
+where available. No OpenType stylistic-set control is required.
 
-Once a form has been selected for a specific letter, it must be used
-consistently throughout the entire word, sentence or text block. For example,
-if the alternate “A” is selected, every “A” within that composition must use
-the same alternate form.
+Standard and alternate forms may be combined. Once a form has been selected
+for a specific letter, use it consistently throughout the same word, sentence
+or text block.
 
-Different letters may use different sets. An alternate “A” can therefore be
-combined with a primary “T”, provided that each letter remains consistent
-throughout the composition.
-
-“Derthona Basket” is a codified exception and must always reproduce the exact
-combination of primary and alternate characters used in the official logo.
+To reproduce the official Derthona Basket wordmark, always use the supplied
+logo artwork rather than typesetting it from scratch.
 
 
 2. VISUAL IMPACT

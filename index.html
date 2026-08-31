@@ -374,10 +374,9 @@
             <article>
               <p class="guideline-number">01</p>
               <h5>Consistency</h5>
-              <p>Characters from the primary and alternate stylistic sets may be combined within the same composition.</p>
-              <p>Once a form has been selected for a specific letter, it must be used consistently throughout the entire word, sentence or text block. <em>For example, if the alternate “A” is selected, every “A” within that composition must use the same alternate form.</em></p>
-              <p>Different letters may use different sets. An alternate “A” can therefore be combined with a primary “T”, provided that each letter remains consistent throughout the composition.</p>
-              <p>“Derthona Basket” is a codified exception and must always reproduce the exact combination of primary and alternate characters used in the official logo.</p>
+              <p>Letter case controls the design of each character: <strong>lowercase typing produces the standard forms, while uppercase typing produces the alternate display forms where available.</strong></p>
+              <p>The two styles may be combined, but each repeated letter must remain consistent throughout the same word, sentence or text block. <em>For example, if an uppercase “A” is used for its alternate form, every “A” in that context should use the same form.</em></p>
+              <p>To reproduce the official Derthona Basket wordmark, always use the supplied logo artwork rather than typesetting it from scratch.</p>
             </article>
             <article>
               <p class="guideline-number">02</p>
@@ -401,10 +400,7 @@
             <p id="type-tester-title" class="micro-label">Try Derthona Display</p>
           </div>
           <div class="type-tester-controls">
-            <label class="type-alternates-control" for="type-alternates">
-              <input id="type-alternates" type="checkbox">
-              <span>Alternate style</span>
-            </label>
+            <p class="type-case-note"><strong>lowercase</strong> standard forms · <strong>UPPERCASE</strong> alternate forms</p>
             <label class="type-size-control" for="type-size">
               <span>Size <output id="type-size-value" for="type-size">112 px</output></span>
               <input id="type-size" type="range" min="40" max="220" value="112" step="1" aria-label="Text size">
@@ -415,7 +411,7 @@
         </div>
         <details class="glyph-accordion">
           <summary>
-            <span>Character set <small>201 Unicode · 11 SS01</small></span>
+            <span>Character set <small>Standard + alternate forms</small></span>
             <span class="glyph-accordion-action">View all characters <b aria-hidden="true">+</b></span>
           </summary>
           <div id="derthona-glyphs" class="glyph-sections" aria-label="Derthona Display character set"></div>
@@ -627,57 +623,29 @@
 
         <section class="font-guide-section font-alternates-section" aria-labelledby="font-alternates-title">
           <div>
-            <p class="micro-label">03 · Alternate style</p>
-            <h3 id="font-alternates-title">Activate Stylistic Set 1.</h3>
-            <p class="font-guide-lead">The alternate style is an OpenType feature named <strong>ss01</strong>. It replaces selected uppercase forms for A, B, D, E, F, H, K, P, Q, R and T. The feature is included in OTF, TTF, WOFF and WOFF2.</p>
+            <p class="micro-label">03 · Letter forms</p>
+            <h3 id="font-alternates-title">Change case.<br>Change character.</h3>
+            <p class="font-guide-lead">The font works in the same way across desktop, web, office, design and presentation software.</p>
           </div>
-          <div class="software-guides">
-            <details>
-              <summary><span>Microsoft Word</span><b aria-hidden="true">+</b></summary>
-              <div>
-                <p>Use the desktop app. Select the text, open the <strong>Font</strong> dialog, choose <strong>Advanced</strong>, then under <strong>OpenType Features</strong> set <strong>Stylistic sets</strong> to <strong>1</strong>.</p>
-                <p class="font-guide-note">On macOS, the Font dialog may be under Format → Font. Word Online and mobile versions may not expose this control.</p>
-                <a class="software-guide-link" href="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.stylisticset?view=word-pia" target="_blank" rel="noopener noreferrer">Microsoft reference ↗</a>
-              </div>
-            </details>
-            <details>
-              <summary><span>Adobe Illustrator</span><b aria-hidden="true">+</b></summary>
-              <div>
-                <p>Select the text, then go to <strong>Window → Type → OpenType</strong>. Open <strong>Stylistic Sets</strong> and choose <strong>Set 1</strong>.</p>
-                <a class="software-guide-link" href="https://helpx.adobe.com/uk/illustrator/desktop/design-with-text/special-characters-glyphs/add-stylistic-sets-to-selected-text.html" target="_blank" rel="noopener noreferrer">Official Illustrator guide ↗</a>
-              </div>
-            </details>
-            <details>
-              <summary><span>Adobe Photoshop</span><b aria-hidden="true">+</b></summary>
-              <div>
-                <p>Select the text, then open <strong>Window → Character</strong>. From the Character panel menu choose <strong>OpenType</strong>, then activate <strong>Stylistic Set 1</strong> when available.</p>
-                <p class="font-guide-note">If your Photoshop version does not show Stylistic Sets, use Window → Glyphs to select alternates manually.</p>
-                <a class="software-guide-link" href="https://helpx.adobe.com/photoshop/desktop/text-typography/select-manage-fonts/apply-opentype-features.html" target="_blank" rel="noopener noreferrer">Official Photoshop guide ↗</a>
-              </div>
-            </details>
-            <details>
-              <summary><span>Figma</span><b aria-hidden="true">+</b></summary>
-              <div>
-                <p>Select the text layer. In the right sidebar open <strong>Typography settings</strong>, find <strong>OpenType features</strong>, then activate <strong>Stylistic set 1</strong>.</p>
-                <p class="font-guide-note">For browser-based Figma, make sure the font is available through the Figma font installer or your organization’s font service.</p>
-                <a class="software-guide-link" href="https://help.figma.com/hc/en-us/articles/4913951097367-Use-OpenType-features" target="_blank" rel="noopener noreferrer">Official Figma guide ↗</a>
-              </div>
-            </details>
-            <details>
-              <summary><span>Canva</span><b aria-hidden="true">+</b></summary>
-              <div>
-                <p>Upload the OTF or TTF through <strong>Brand Kit</strong> if your account and permissions allow custom fonts. Canva does not currently provide a control for OpenType stylistic sets such as ss01.</p>
-                <p class="font-guide-note">For alternate letters, prepare the final wording in Illustrator, Photoshop or Figma, convert it to outlines, export SVG or PNG, then upload it to Canva.</p>
-                <a class="software-guide-link" href="https://www.canva.com/learn/how-to-build-a-brand-kit/" target="_blank" rel="noopener noreferrer">Official Canva guide ↗</a>
-              </div>
-            </details>
+          <div class="font-case-guide">
+            <article>
+              <span class="font-guide-tag">Standard forms</span>
+              <p class="font-case-sample">derthona basket</p>
+              <p>Type in <strong>lowercase</strong> to use the standard letterforms.</p>
+            </article>
+            <article>
+              <span class="font-guide-tag">Alternate forms</span>
+              <p class="font-case-sample">DERTHONA BASKET</p>
+              <p>Type in <strong>uppercase</strong> to use the alternate display forms where available.</p>
+            </article>
+            <p class="font-case-note">No OpenType feature, stylistic-set control or software-specific procedure is required.</p>
           </div>
         </section>
 
         <section class="font-guide-section font-web-section" aria-labelledby="font-web-title">
           <div>
             <p class="micro-label">04 · Web use</p>
-            <h3 id="font-web-title">Load the font.<br>Switch on ss01.</h3>
+            <h3 id="font-web-title">Load the font.<br>Use letter case.</h3>
           </div>
           <pre><code>@font-face {
   font-family: "Derthona Display";
@@ -686,10 +654,6 @@
     url("DerthonaDisplay-Regular.woff") format("woff");
   font-style: normal;
   font-weight: 400;
-}
-
-.alternate-style {
-  font-feature-settings: "ss01" 1;
 }</code></pre>
         </section>
       </div>

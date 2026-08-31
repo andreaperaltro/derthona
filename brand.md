@@ -1,7 +1,7 @@
 ---
 name: "Derthona Basket"
 tagline: "Rooted in history. Built for tomorrow."
-version: 4
+version: 5
 language: en
 type: master
 ---
@@ -190,20 +190,19 @@ approval.
 Custom display typeface, Regular. Use for headlines, campaign statements,
 scores and high-impact messages. This is the identity typeface.
 
-The font includes OpenType Stylistic Set 1 (`ss01`) with alternate uppercase
-forms for A, B, D, E, F, H, K, P, Q, R and T. The feature is present in OTF,
-TTF, WOFF and WOFF2.
+Letter case controls the character design directly. Lowercase typing produces
+the standard letterforms; uppercase typing produces the alternate display
+forms where available. No OpenType stylistic-set control is required, so the
+same method works in desktop, web and presentation software, including Canva.
 
 Usage principles:
 
-- **Consistency:** Primary and alternate forms may appear in the same
-  composition. Once a form has been selected for a specific letter, it must be
-  used consistently throughout the same word, sentence or text block. If the
-  alternate A is selected, every A in that context must use the alternate form.
-  Different letters may independently use primary or alternate forms.
-- **“Derthona Basket” exception:** Always reproduce the exact codified
-  combination of primary and alternate characters used in the official logo.
-  Do not apply the complete alternate set automatically.
+- **Consistency:** Standard and alternate forms may appear in the same
+  composition. Use lowercase for a standard form and uppercase for its
+  alternate form. Once a form has been selected for a specific letter, use it
+  consistently throughout the same word, sentence or text block.
+- **Official wordmark:** Always use the supplied logo artwork to reproduce the
+  Derthona Basket wordmark rather than typesetting it from scratch.
 - **Visual impact:** Use a maximum of six words per line. Prefer short, compact
   statements. Whenever possible, set leading to the same value as the type
   size, for example 100 pt type with 100 pt leading.
