@@ -57,6 +57,8 @@ html[data-theme="dark"] {
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body { margin: 0; background: var(--theme-bg); color: var(--theme-text); font-family: var(--sans); transition: background-color .35s ease, color .35s ease; }
+/* Derthona Display maps its standard forms to lowercase code points. */
+body :is(h1, h2, h3, h4, h5, h6) { text-transform: lowercase !important; }
 img { display: block; max-width: 100%; }
 button, a { font: inherit; }
 a { color: inherit; }

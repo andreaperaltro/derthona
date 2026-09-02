@@ -33,6 +33,9 @@ Standard and alternate forms may be combined. Once a form has been selected
 for a specific letter, use it consistently throughout the same word, sentence
 or text block.
 
+Always use the standard letterforms for editorial titles and headings. In
+Derthona Display, type these using lowercase characters.
+
 To reproduce the official Derthona Basket wordmark, always use the supplied
 logo artwork rather than typesetting it from scratch.
 

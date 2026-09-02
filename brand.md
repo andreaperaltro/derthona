@@ -1,7 +1,7 @@
 ---
 name: "Derthona Basket"
 tagline: "Rooted in history. Built for tomorrow."
-version: 5
+version: 6
 language: en
 type: master
 ---
@@ -201,6 +201,8 @@ Usage principles:
   composition. Use lowercase for a standard form and uppercase for its
   alternate form. Once a form has been selected for a specific letter, use it
   consistently throughout the same word, sentence or text block.
+- **Headings:** Always use the standard letterforms for editorial titles and
+  headings. In Derthona Display, type these using lowercase characters.
 - **Official wordmark:** Always use the supplied logo artwork to reproduce the
   Derthona Basket wordmark rather than typesetting it from scratch.
 - **Visual impact:** Use a maximum of six words per line. Prefer short, compact
