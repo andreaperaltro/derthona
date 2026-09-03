@@ -217,33 +217,46 @@ logoColorButtons.forEach((button) => button.addEventListener('click', () => setL
 const composedShowcase = document.querySelector('.composed-grid');
 const composedThemeButtons = document.querySelectorAll('[data-composed-theme]');
 const composedColorButtons = document.querySelectorAll('[data-composed-color]');
+const composedMarkButtons = document.querySelectorAll('[data-composed-mark]');
 let composedThemeTimer;
 
+const getComposedAsset = (element, mark, theme, color, kind) => {
+  const suffix = kind === 'src' ? 'Src' : 'Href';
+  if (mark === 'lion') {
+    const variant = color === 'monochrome' ? `-mono-${theme}` : (theme === 'dark' ? '-dark' : '');
+    return element.dataset[`light${suffix}`]?.replace(/(\.[^./]+)$/, `-lion${variant}$1`);
+  }
+  if (color === 'monochrome') return element.dataset[`mono${theme === 'dark' ? 'Dark' : 'Light'}${suffix}`];
+  return element.dataset[`${theme}${suffix}`];
+};
+
 composedShowcase?.querySelectorAll('img[data-light-src]').forEach((image) => {
-  [image.dataset.darkSrc, image.dataset.monoLightSrc, image.dataset.monoDarkSrc].forEach((asset) => {
+  const assets = [image.dataset.darkSrc, image.dataset.monoLightSrc, image.dataset.monoDarkSrc];
+  ['light', 'dark'].forEach((theme) => ['color', 'monochrome'].forEach((color) => {
+    assets.push(getComposedAsset(image, 'lion', theme, color, 'src'));
+  }));
+  assets.forEach((asset) => {
     const preload = new Image();
     preload.src = asset;
   });
 });
 
-const setComposedPreview = (theme = composedShowcase?.dataset.theme, color = composedShowcase?.dataset.color) => {
-  if (!composedShowcase || (composedShowcase.dataset.theme === theme && composedShowcase.dataset.color === color)) return;
+const setComposedPreview = (theme = composedShowcase?.dataset.theme, color = composedShowcase?.dataset.color, mark = composedShowcase?.dataset.mark) => {
+  if (!composedShowcase || (composedShowcase.dataset.theme === theme && composedShowcase.dataset.color === color && composedShowcase.dataset.mark === mark)) return;
   window.clearTimeout(composedThemeTimer);
   composedShowcase.classList.add('is-switching');
   composedThemeButtons.forEach((button) => button.setAttribute('aria-pressed', String(button.dataset.composedTheme === theme)));
   composedColorButtons.forEach((button) => button.setAttribute('aria-pressed', String(button.dataset.composedColor === color)));
+  composedMarkButtons.forEach((button) => button.setAttribute('aria-pressed', String(button.dataset.composedMark === mark)));
   composedThemeTimer = window.setTimeout(() => {
     composedShowcase.dataset.theme = theme;
     composedShowcase.dataset.color = color;
+    composedShowcase.dataset.mark = mark;
     composedShowcase.querySelectorAll('img[data-light-src]').forEach((image) => {
-      image.src = color === 'monochrome'
-        ? (theme === 'dark' ? image.dataset.monoDarkSrc : image.dataset.monoLightSrc)
-        : (theme === 'dark' ? image.dataset.darkSrc : image.dataset.lightSrc);
+      image.src = getComposedAsset(image, mark, theme, color, 'src');
     });
     composedShowcase.querySelectorAll('.composed-download').forEach((link) => {
-      link.href = color === 'monochrome'
-        ? (theme === 'dark' ? link.dataset.monoDarkHref : link.dataset.monoLightHref)
-        : (theme === 'dark' ? link.dataset.darkHref : link.dataset.lightHref);
+      link.href = getComposedAsset(link, mark, theme, color, 'href');
       setJpgAvailability(link, theme);
     });
     requestAnimationFrame(() => composedShowcase.classList.remove('is-switching'));
@@ -252,6 +265,7 @@ const setComposedPreview = (theme = composedShowcase?.dataset.theme, color = com
 
 composedThemeButtons.forEach((button) => button.addEventListener('click', () => setComposedPreview(button.dataset.composedTheme)));
 composedColorButtons.forEach((button) => button.addEventListener('click', () => setComposedPreview(undefined, button.dataset.composedColor)));
+composedMarkButtons.forEach((button) => button.addEventListener('click', () => setComposedPreview(undefined, undefined, button.dataset.composedMark)));
 
 const glyphRoot = document.querySelector('#derthona-glyphs');
 const typeTester = document.querySelector('#type-tester-input');

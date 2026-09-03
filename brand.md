@@ -1,7 +1,7 @@
 ---
 name: "Derthona Basket"
 tagline: "Rooted in history. Built for tomorrow."
-version: 6
+version: 7
 language: en
 type: master
 ---
@@ -301,12 +301,15 @@ of 3X must always be maintained. Use the
 
 ### Composed Logos
 
-Composed logos balance Derthona Basket with an approved partner identity.
+Composed logos balance Derthona Basket with an approved partner identity. Each
+composition is available with either the Crest or the Lion symbol.
 
 - Always apply the larger respect area required by either logo.
 - Separate the marks with a 1 pt line as wide as the larger logo.
 - Use a black or white separator according to the background.
 - Use the supplied horizontal or vertical composition.
+- Select the supplied Crest or Lion construction; do not replace or reposition
+  the Derthona symbol manually.
 - Select the supplied color or monochrome version for the intended light or
   dark background.
 - Use SVG or PNG for dark-background compositions. JPG downloads are available
@@ -318,6 +321,10 @@ Approved composed families:
 - [Bertram vertical](assets/official/composed/bertram-vertical.svg)
 - [Baglietto horizontal](assets/official/composed/baglietto-horizontal.svg)
 - [Baglietto vertical](assets/official/composed/baglietto-vertical.svg)
+- [Bertram horizontal — Lion](assets/official/composed/bertram-horizontal-lion.svg)
+- [Bertram vertical — Lion](assets/official/composed/bertram-vertical-lion.svg)
+- [Baglietto horizontal — Lion](assets/official/composed/baglietto-horizontal-lion.svg)
+- [Baglietto vertical — Lion](assets/official/composed/baglietto-vertical-lion.svg)
 - [Composed-logo respect area](assets/official/composed/respect-area.svg)
 
 See the complete [composed logo library](index.html#logo).
