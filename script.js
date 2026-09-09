@@ -1,3 +1,31 @@
+const accessKey = 'derthona-brand-manual-access';
+const accessPassword = 'ForzaLeoni55';
+const accessForm = document.querySelector('#access-form');
+const accessInput = document.querySelector('#access-password');
+const accessError = document.querySelector('#access-error');
+
+if (document.documentElement.dataset.auth === 'locked') {
+  window.requestAnimationFrame(() => accessInput?.focus());
+}
+
+accessForm?.addEventListener('submit', (event) => {
+  event.preventDefault();
+  if (accessInput.value === accessPassword) {
+    try {
+      sessionStorage.setItem(accessKey, 'granted');
+    } catch (error) {
+      // Continue unlocking when storage is unavailable, for example in restricted local-file mode.
+    }
+    document.documentElement.dataset.auth = 'unlocked';
+    accessError.textContent = '';
+    accessInput.value = '';
+    document.querySelector('.brand-link')?.focus();
+    return;
+  }
+  accessError.textContent = 'Incorrect password. Please try again.';
+  accessInput.select();
+});
+
 const systemTheme = window.matchMedia('(prefers-color-scheme: dark)');
 const themeButton = document.querySelector('.theme-toggle');
 const themeLabel = document.querySelector('.theme-toggle-label');

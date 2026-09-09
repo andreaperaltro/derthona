@@ -1,17 +1,41 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-auth="locked">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#EF3340">
-  <script>document.documentElement.dataset.theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';</script>
+  <script>
+    document.documentElement.dataset.theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    try {
+      if (sessionStorage.getItem('derthona-brand-manual-access') === 'granted') document.documentElement.dataset.auth = 'unlocked';
+    } catch (error) {
+      /* Some local-file browser modes disable session storage. The gate still works for the current page view. */
+    }
+  </script>
   <title>Derthona Basket Brand Manual</title>
   <meta name="description" content="The visual and verbal identity system of Derthona Basket.">
+  <meta name="robots" content="noindex, nofollow, noarchive">
   <link rel="icon" href="assets/official/lion-symbol.svg" type="image/svg+xml">
   <link rel="alternate" href="brand.md" type="text/markdown" title="Derthona Basket AI Brand Guide">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <div class="access-gate" role="dialog" aria-modal="true" aria-labelledby="access-gate-title">
+    <form class="access-gate-card" id="access-form">
+      <img class="access-gate-logo theme-aware-logo" src="assets/official/crest.svg" data-light-src="assets/official/crest.svg" data-dark-src="assets/official/crest-white.svg" alt="Derthona Basket">
+      <div>
+        <p class="eyebrow">Derthona Basket</p>
+        <h1 id="access-gate-title">Brand manual.</h1>
+        <p class="access-gate-copy">Enter the password to access the brand identity system.</p>
+      </div>
+      <label class="access-password-label" for="access-password">Password</label>
+      <div class="access-password-row">
+        <input id="access-password" name="password" type="password" autocomplete="current-password" required aria-describedby="access-error">
+        <button type="submit">Enter <span aria-hidden="true">→</span></button>
+      </div>
+      <p class="access-error" id="access-error" role="alert" aria-live="polite"></p>
+    </form>
+  </div>
   <header class="topbar">
     <a class="brand-link" href="#intro" aria-label="Back to top">
       <img class="brand-symbol theme-aware-logo" src="assets/official/lion-symbol.svg" data-light-src="assets/official/lion-symbol.svg" data-dark-src="assets/official/lion-symbol-white.svg" alt="">
