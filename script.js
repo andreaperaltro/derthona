@@ -16,10 +16,10 @@ accessForm?.addEventListener('submit', (event) => {
     } catch (error) {
       // Continue unlocking when storage is unavailable, for example in restricted local-file mode.
     }
-    document.documentElement.dataset.auth = 'unlocked';
     accessError.textContent = '';
     accessInput.value = '';
-    document.querySelector('.brand-link')?.focus();
+    accessInput.blur();
+    document.documentElement.dataset.auth = 'unlocked';
     return;
   }
   accessError.textContent = 'Incorrect password. Please try again.';
