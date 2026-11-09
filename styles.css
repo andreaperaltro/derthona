@@ -4,13 +4,10 @@
   font-weight: 700;
   font-display: swap;
 }
-@font-face { font-family: "PP Neue Montreal"; src: url("assets/fonts/PPNeueMontreal-Regular.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
-@font-face { font-family: "PP Neue Montreal"; src: url("assets/fonts/PPNeueMontreal-Italic.woff2") format("woff2"); font-weight: 400; font-style: italic; font-display: swap; }
-@font-face { font-family: "PP Neue Montreal"; src: url("assets/fonts/PPNeueMontreal-Light.woff2") format("woff2"); font-weight: 300; font-style: normal; font-display: swap; }
-@font-face { font-family: "PP Neue Montreal"; src: url("assets/fonts/PPNeueMontreal-Medium.woff2") format("woff2"); font-weight: 500; font-style: normal; font-display: swap; }
-@font-face { font-family: "PP Neue Montreal"; src: url("assets/fonts/PPNeueMontreal-Semibold.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
-@font-face { font-family: "PP Neue Montreal"; src: url("assets/fonts/PPNeueMontreal-Extrabold.woff2") format("woff2"); font-weight: 800; font-style: normal; font-display: swap; }
-@font-face { font-family: "PP Neue Montreal"; src: url("assets/fonts/PPNeueMontreal-Black.woff2") format("woff2"); font-weight: 900; font-style: normal; font-display: swap; }
+@font-face { font-family: "TeX Gyre Heros"; src: url("assets/fonts/TeXGyreHeros-Regular.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "TeX Gyre Heros"; src: url("assets/fonts/TeXGyreHeros-Italic.woff2") format("woff2"); font-weight: 400; font-style: italic; font-display: swap; }
+@font-face { font-family: "TeX Gyre Heros"; src: url("assets/fonts/TeXGyreHeros-Bold.woff2") format("woff2"); font-weight: 700 900; font-style: normal; font-display: swap; }
+@font-face { font-family: "TeX Gyre Heros"; src: url("assets/fonts/TeXGyreHeros-BoldItalic.woff2") format("woff2"); font-weight: 700 900; font-style: italic; font-display: swap; }
 @font-face { font-family: "PP Fragment"; src: url("assets/fonts/PPFragment-GlareRegular.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
 @font-face { font-family: "PP Fragment"; src: url("assets/fonts/PPFragment-GlareRegularItalic.woff2") format("woff2"); font-weight: 400; font-style: italic; font-display: swap; }
 @font-face { font-family: "PP Fragment"; src: url("assets/fonts/PPFragment-GlareExtraBold.woff2") format("woff2"); font-weight: 800; font-style: normal; font-display: swap; }
@@ -22,7 +19,7 @@
   --white: #fff;
   --warm: #f2efeb;
   --pad: clamp(24px, 5vw, 80px);
-  --sans: "PP Neue Montreal", Arial, Helvetica, sans-serif;
+  --sans: "TeX Gyre Heros", Arial, Helvetica, sans-serif;
   --display: "Derthona Display", "Arial Narrow", Impact, sans-serif;
   --accent: "PP Fragment", Georgia, serif;
   --action-size: 11px;
@@ -352,7 +349,7 @@ html[data-auth="locked"] .access-gate {
 .type-family { min-height: 470px; padding: clamp(28px, 3.5vw, 50px); display: flex; flex-direction: column; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .type-family .type-specimen { flex: 1; margin: 60px 0 45px; }
 .type-family-display .type-specimen { color: var(--red); font: 700 clamp(38px, 4vw, 62px)/.95 var(--display); }
-.type-family-montreal .type-specimen { font: 500 clamp(28px, 3vw, 45px)/1.08 var(--sans); }
+.type-family-heros .type-specimen { font: 500 clamp(28px, 3vw, 45px)/1.08 var(--sans); }
 .type-family-fragment .type-specimen { font: 400 clamp(30px, 3.5vw, 52px)/1.08 var(--accent); }
 .type-family > div { padding-top: 24px; display: grid; gap: 10px; border-top: 1px solid var(--line); }
 .type-family > div strong { font-size: 11px; letter-spacing: .1em; text-transform: uppercase; }

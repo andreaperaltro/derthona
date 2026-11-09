@@ -1,7 +1,7 @@
 ---
 name: "Derthona Basket"
 tagline: "Rooted in history. Built for tomorrow."
-version: 7
+version: 8
 language: en
 type: master
 ---
@@ -222,12 +222,16 @@ The package contains OTF and TTF files for desktop installation, WOFF and
 WOFF2 files for web use, and a text guide with the usage principles above.
 Version 1.0 is copyright Derthona Basket and was designed by ESC Design Studio.
 
-#### PP Neue Montreal
+#### TeX Gyre Heros
 
 Use for subtitles, body copy, navigation, captions and functional information.
 This is the information typeface.
 
-[Download PP Neue Montreal in OTF, TTF, WOFF and WOFF2](assets/fonts/downloads/pp-neue-montreal.zip).
+[Download TeX Gyre Heros in OTF, TTF, WOFF and WOFF2](assets/fonts/downloads/tex-gyre-heros.zip).
+
+TeX Gyre Heros is distributed under the GUST Font License. The downloadable
+package includes Regular, Italic, Bold and Bold Italic together with the
+license text.
 
 #### PP Fragment
 
@@ -252,6 +256,7 @@ Letterheads:
 - [Centered](assets/templates/letterheads/letterhead-centered.pdf)
 - [Competition](assets/templates/letterheads/letterhead-competition.pdf)
 - [Left aligned](assets/templates/letterheads/letterhead-left-aligned.pdf)
+- [Adobe Illustrator master with all letterhead layouts](assets/templates/letterheads/letterhead-templates.ai)
 
 ### Logo System
 

@@ -20,7 +20,7 @@ The Rose Symbol uses the same color artwork on light and dark backgrounds, so
 the approved file is included in both Color folders for easier selection.
 
 02 Fonts
-Font packages for Derthona Display, PP Neue Montreal and PP Fragment.
+Font packages for Derthona Display, TeX Gyre Heros and PP Fragment.
 The Derthona Display package includes desktop and web formats together with its
 installation and usage guide.
 
